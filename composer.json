@@ -3,7 +3,6 @@
     "description": "PHP SOAP library for Clang",
     "type": "library",
     "license": "proprietary",
-    "minimum-stability": "stable",
     "require": {
         "php": ">=5.3.0"
     },
