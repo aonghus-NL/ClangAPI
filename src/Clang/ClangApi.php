@@ -2104,5 +2104,3 @@ class ClangAPI extends \SoapClient {
   }
 
 }
-
-?>
