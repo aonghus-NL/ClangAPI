@@ -1,0 +1,66 @@
+<?php
+namespace Clang;
+
+class Customer {
+  public $accounts; // ArrayOfAccount
+  public $smsOptIn; // string
+  public $optIn; // string
+  public $id; // long
+  public $title; // string
+  public $lastname; // string
+  public $firstname; // string
+  public $middlename; // string
+  public $prefix; // string
+  public $suffix; // string
+  public $initials; // string
+  public $gender; // string
+  public $maritalStatus; // string
+  public $birthday; // string
+  public $birthplace; // string
+  public $address; // string
+  public $address2; // string
+  public $address3; // string
+  public $addressNumber; // string
+  public $addressNumberSuffix; // string
+  public $zipCode; // string
+  public $poBox; // string
+  public $city; // string
+  public $state; // string
+  public $country; // string
+  public $companyName; // string
+  public $department; // string
+  public $alternateAddress; // string
+  public $alternateAddress2; // string
+  public $alternateAddress3; // string
+  public $alternateAddressNumber; // string
+  public $alternateAddressNumberSuffix; // string
+  public $alternateZipCode; // string
+  public $alternateCity; // string
+  public $alternateState; // string
+  public $alternateCountry; // string
+  public $contactMan; // string
+  public $jobTitle; // string
+  public $workPhone; // string
+  public $workExtension; // string
+  public $workMobile; // string
+  public $homePhone; // string
+  public $mobilePhone; // string
+  public $faxNumber; // string
+  public $emailAddress; // string
+  public $alternateEmailAddress; // string
+  public $emailType; // string
+  public $mailStatus; // string
+  public $softBounceCount; // long
+  public $hardBounceCount; // long
+  public $website; // string
+  public $imageUrl; // string
+  public $status; // string
+  public $externalId; // string
+  public $userName; // string
+  public $password; // string
+  public $createdBy; // string
+  public $createdAt; // string
+  public $modifiedBy; // string
+  public $modifiedAt; // string
+  public $options; // ArrayOfCustomerOption
+}

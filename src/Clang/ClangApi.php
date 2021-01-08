@@ -1,576 +1,16 @@
 <?php
 namespace Clang;
 
-class Option {
-  public $type; // string
-  public $name; // string
-  public $value; // string
-}
-
-class MethodOptions {
-  public $method; // string
-  public $options; // ArrayOfOption
-}
-
-class SmsBlock {
-  public $id; // long
-  public $name; // string
-  public $content; // string
-}
-
-class SmsBlockContainer {
-  public $id; // long
-  public $name; // string
-  public $type; // string
-  public $defaultBlockId; // long
-  public $blocks; // ArrayOfSmsBlock
-}
-
-class Sms {
-  public $id; // long
-  public $campaignId; // long
-  public $name; // string
-  public $fromName; // string
-  public $plainText; // string
-  public $enableUnicodeSupport; // boolean
-  public $maxSmsMessages; // long
-  public $createdBy; // string
-  public $createdAt; // string
-  public $modifiedBy; // string
-  public $modifiedAt; // string
-  public $textBlocks; // ArrayOfSmsBlockContainer
-}
-
-class Complaint {
-  public $feedbackloop; // string
-  public $id; // long
-  public $customerId; // long
-  public $mailingId; // long
-  public $complaintAt; // string
-}
-
-class Bounce {
-  public $id; // long
-  public $customerId; // long
-  public $mailingId; // long
-  public $bouncedAt; // string
-  public $rule; // string
-  public $category; // string
-}
-
-class Tag {
-  public $id; // long
-  public $name; // string
-  public $weight; // long
-}
-
-class MailingLink {
-  public $mailingId; // long
-  public $id; // long
-  public $url; // string
-  public $description; // string
-  public $track; // boolean
-  public $source; // boolean
-  public $tags; // ArrayOfTag
-  public $google_source; // string
-  public $google_medium; // string
-  public $google_term; // string
-  public $google_content; // string
-  public $google_campaign; // string
-  public $sitestat_campaign; // string
-  public $sitestat_source; // string
-  public $sitestat_mchannel; // string
-  public $sitestat_linkname; // string
-  public $sitestat_fee; // string
-}
-
-class Click {
-  public $link; // MailingLink
-  public $id; // long
-  public $customerId; // long
-  public $mailingId; // long
-  public $clickedAt; // string
-  public $browserInformation; // BrowserInformation
-}
-
-class BrowserInformation {
-  public $name; // string
-  public $version; // string
-  public $platform; // string
-  public $country; // string
-  public $httpAcceptCharset; // string
-  public $httpAcceptLanguage; // string
-  public $httpAcceptEncoding; // string
-  public $httpAccept; // string
-  public $httpUserAgent; // string
-}
-
-class Open {
-  public $id; // long
-  public $customerId; // long
-  public $mailingId; // long
-  public $openedAt; // string
-  public $browserInformation; // BrowserInformation
-}
-
-class CustomerOption {
-  public $identifier; // string
-  public $customerId; // long
-  public $name; // string
-  public $value; // string
-}
-
-class Account {
-  public $network; // string
-  public $accountId; // string
-}
-
-class Customer {
-  public $accounts; // ArrayOfAccount
-  public $smsOptIn; // string
-  public $optIn; // string
-  public $id; // long
-  public $title; // string
-  public $lastname; // string
-  public $firstname; // string
-  public $middlename; // string
-  public $prefix; // string
-  public $suffix; // string
-  public $initials; // string
-  public $gender; // string
-  public $maritalStatus; // string
-  public $birthday; // string
-  public $birthplace; // string
-  public $address; // string
-  public $address2; // string
-  public $address3; // string
-  public $addressNumber; // string
-  public $addressNumberSuffix; // string
-  public $zipCode; // string
-  public $poBox; // string
-  public $city; // string
-  public $state; // string
-  public $country; // string
-  public $companyName; // string
-  public $department; // string
-  public $alternateAddress; // string
-  public $alternateAddress2; // string
-  public $alternateAddress3; // string
-  public $alternateAddressNumber; // string
-  public $alternateAddressNumberSuffix; // string
-  public $alternateZipCode; // string
-  public $alternateCity; // string
-  public $alternateState; // string
-  public $alternateCountry; // string
-  public $contactMan; // string
-  public $jobTitle; // string
-  public $workPhone; // string
-  public $workExtension; // string
-  public $workMobile; // string
-  public $homePhone; // string
-  public $mobilePhone; // string
-  public $faxNumber; // string
-  public $emailAddress; // string
-  public $alternateEmailAddress; // string
-  public $emailType; // string
-  public $mailStatus; // string
-  public $softBounceCount; // long
-  public $hardBounceCount; // long
-  public $website; // string
-  public $imageUrl; // string
-  public $status; // string
-  public $externalId; // string
-  public $userName; // string
-  public $password; // string
-  public $createdBy; // string
-  public $createdAt; // string
-  public $modifiedBy; // string
-  public $modifiedAt; // string
-  public $options; // ArrayOfCustomerOption
-}
-
-class Delivery {
-  public $id; // string
-  public $status; // string
-  public $customer; // Customer
-  public $mailingId; // long
-  public $deliveryDate; // string
-  public $firstOpenDate; // string
-  public $lastOpenDate; // string
-  public $firstClickDate; // string
-  public $lastClickDate; // string
-  public $opens; // ArrayOfOpen
-  public $clicks; // ArrayOfClick
-  public $bounce; // Bounce
-  public $complaint; // Complaint
-}
-
-class CampaignObjectStatisticsOption {
-  public $id; // string
-  public $name; // string
-  public $value; // string
-  public $hasCustomerSet; // boolean
-}
-
-class CampaignObjectStatistics {
-  public $campaignId; // long
-  public $campaignObjectId; // long
-  public $options; // ArrayOfCampaignObjectStatisticsOption
-}
-
-class CampaignStatistics {
-  public $smsableCustomers; // long
-  public $uniqueCustomers; // long
-  public $mailableCustomers; // long
-  public $uniqueEmailAddresses; // long
-  public $uniqueMobilePhoneNumbers; // long
-}
-
-class Group {
-  public $id; // long
-  public $parentId; // long
-  public $name; // string
-  public $description; // string
-  public $createdBy; // string
-  public $createdAt; // string
-  public $modifiedBy; // string
-  public $modifiedAt; // string
-  public $countDate; // string
-  public $customerCountRecursive; // long
-  public $customerCount; // long
-}
-
-class ClangResource {
-  public $id; // long
-  public $type; // string
-  public $status; // string
-  public $size; // long
-}
-
-class Mailing {
-  public $plannedFor; // string
-  public $uniqueClicks; // long
-  public $uniqueOpens; // long
-  public $received; // long
-  public $campaignId; // long
-  public $campaignName; // string
-  public $id; // long
-  public $contentName; // string
-  public $sourceType; // string
-  public $sourceName; // string
-  public $customers; // long
-  public $throttle; // long
-  public $status; // string
-  public $links; // ArrayOfMailingLink
-  public $type; // string
-  public $description; // string
-  public $startedAt; // string
-  public $endedAt; // string
-  public $bounces; // long
-  public $opens; // long
-  public $clicks; // long
-  public $complaints; // long
-}
-
-class MagentoCategory {
-  public $id; // long
-  public $externalCategoryId; // long
-  public $name; // string
-}
-
-class MagentoProduct {
-  public $storeId; // long
-  public $orderItemId; // long
-  public $attributes; // ArrayOfOption
-  public $id; // long
-  public $externalProductId; // long
-  public $sku; // string
-  public $name; // string
-  public $description; // string
-  public $url; // string
-  public $image; // string
-  public $orderId; // long
-  public $quantity; // long
-  public $priceEx; // double
-  public $price; // double
-  public $discount; // double
-  public $categories; // ArrayOfMagentoCategory
-  public $related; // ArrayOfInt
-  public $upSell; // ArrayOfInt
-  public $crossSell; // ArrayOfInt
-}
-
-class MagentoOrder {
-  public $quoteId; // string
-  public $subtotalInclTax; // double
-  public $couponCode; // string
-  public $totalQtyOrdered; // long
-  public $weight; // double
-  public $taxString; // string
-  public $shippingInclTax; // double
-  public $discountDescription; // string
-  public $shippingDiscountAmount; // double
-  public $totalItemCount; // long
-  public $status; // string
-  public $externalOrderId; // string
-  public $note; // string
-  public $id; // long
-  public $storeview; // string
-  public $customerId; // long
-  public $subtotal; // double
-  public $total; // double
-  public $taxAmount; // double
-  public $shippingCost; // double
-  public $discount; // double
-  public $currency; // string
-  public $rewardPoints; // long
-  public $billingFirstname; // string
-  public $billingMiddlename; // string
-  public $billingTitle; // string
-  public $billingLastname; // string
-  public $billingAddress; // string
-  public $billingZipCode; // string
-  public $billingPoBox; // long
-  public $billingCity; // string
-  public $billingState; // string
-  public $billingCountry; // string
-  public $billingCompanyName; // string
-  public $billingPhone; // string
-  public $billingEmailAddress; // string
-  public $shippingFirstname; // string
-  public $shippingMiddlename; // string
-  public $shippingTitle; // string
-  public $shippingLastname; // string
-  public $shippingAddress; // string
-  public $shippingZipCode; // string
-  public $shippingPoBox; // long
-  public $shippingCity; // string
-  public $shippingState; // string
-  public $shippingCountry; // string
-  public $shippingCompanyName; // string
-  public $shippingPhone; // string
-  public $paymentMethod; // string
-  public $shippingMethod; // string
-  public $orderDate; // long
-  public $products; // ArrayOfMagentoProduct
-  public $billingPrefix; // string
-  public $billingSuffix; // string
-  public $shippingPrefix; // string
-  public $shippingSuffix; // string
-}
-
-class MagentoAbandonedOrder {
-  public $id; // long
-  public $quoteId; // long
-  public $storeview; // string
-  public $storeviewId; // long
-  public $customerId; // long
-  public $subtotal; // double
-  public $total; // double
-  public $taxAmount; // double
-  public $discount; // double
-  public $currency; // string
-  public $createDate; // long
-  public $products; // ArrayOfMagentoProduct
-}
-
-class EmailBlock {
-  public $id; // long
-  public $name; // string
-  public $content; // string
-}
-
-class EmailBlockContainer {
-  public $id; // long
-  public $name; // string
-  public $type; // string
-  public $defaultBlockId; // long
-  public $blocks; // ArrayOfEmailBlock
-}
-
-class MagentoEmail {
-  public $folder; // string
-  public $class; // string
-  public $id; // long
-  public $type; // string
-  public $templateId; // long
-  public $name; // string
-  public $campaignId; // long
-  public $fromAddress; // string
-  public $fromName; // string
-  public $replyToAddress; // string
-  public $replyToName; // string
-  public $subject; // string
-  public $createdBy; // string
-  public $createdAt; // string
-  public $modifiedBy; // string
-  public $modifiedAt; // string
-  public $htmlContent; // string
-  public $htmlBlocks; // ArrayOfEmailBlockContainer
-  public $textContent; // string
-}
-
-class GroupMembership {
-  public $groupId; // long
-  public $customerId; // long
-  public $isMember; // boolean
-  public $startedAt; // string
-}
-
-class MagentoShipment {
-  public $id; // long
-  public $externalShipmentId; // string
-  public $externalOrderId; // string
-  public $storeview; // string
-  public $customerId; // long
-  public $billingFirstname; // string
-  public $billingMiddlename; // string
-  public $billingPrefix; // string
-  public $billingSuffix; // string
-  public $billingLastname; // string
-  public $billingAddress; // string
-  public $billingZipCode; // string
-  public $billingPoBox; // long
-  public $billingCity; // string
-  public $billingState; // string
-  public $billingCountry; // string
-  public $billingCompanyName; // string
-  public $billingPhone; // string
-  public $billingEmailAddress; // string
-  public $shippingFirstname; // string
-  public $shippingMiddlename; // string
-  public $shippingPrefix; // string
-  public $shippingSuffix; // string
-  public $shippingLastname; // string
-  public $shippingAddress; // string
-  public $shippingZipCode; // string
-  public $shippingPoBox; // long
-  public $shippingCity; // string
-  public $shippingState; // string
-  public $shippingCountry; // string
-  public $shippingCompanyName; // string
-  public $shippingPhone; // string
-  public $shippingDate; // long
-  public $products; // ArrayOfMagentoProduct
-}
-
-class MagentoCreditMemoItem {
-  public $storeId; // long
-  public $orderItemId; // long
-  public $externalProductId; // string
-  public $sku; // string
-  public $name; // string
-  public $price; // double
-  public $priceInclTax; // double
-  public $weeeTaxApplied; // string
-  public $weeeTaxAppliedAmount; // double
-  public $weeeTaxAppliedRowAmount; // double
-  public $weeeTaxDisposition; // string
-  public $weeeTaxRowDisposition; // string
-  public $quantity; // long
-  public $rowTotal; // double
-  public $rowTotalInclTax; // double
-  public $taxAmount; // double
-  public $hiddenTaxAmount; // double
-  public $backToStock; // long
-  public $createdAt; // string
-  public $updatedAt; // string
-  public $basePrice; // double
-  public $baseCost; // double
-  public $basePriceInclTax; // double
-  public $baseWeeeTaxAppliedAmount; // double
-  public $baseWeeeTaxAppliedRowAmount; // double
-  public $baseWeeeTaxAppliedRowAmnt; // double
-  public $baseWeeeTaxDisposition; // string
-  public $baseWeeeTaxRowDisposition; // string
-  public $baseRowTotal; // double
-  public $baseRowTotalInclTax; // double
-  public $baseTaxAmount; // double
-  public $baseHiddenTaxAmount; // double
-}
-
-class MagentoCreditMemo {
-  public $id; // long
-  public $externalOrderId; // string
-  public $customerId; // long
-  public $globalCurrencyCode; // string
-  public $storeCurrencyCode; // string
-  public $orderCurrencyCode; // string
-  public $storeToBaseRate; // double
-  public $storeToOrderRate; // double
-  public $discountDescription; // string
-  public $shippingTaxAmount; // double
-  public $totalQuantity; // long
-  public $adjustmentPositive; // string
-  public $adjustmentNegative; // string
-  public $subtotal; // double
-  public $subtotalInclTax; // double
-  public $grandTotal; // double
-  public $taxAmount; // double
-  public $discountAmount; // double
-  public $shippingAmount; // double
-  public $shippingInclTax; // double
-  public $adjustment; // string
-  public $hiddenTaxAmount; // double
-  public $offlineRequested; // string
-  public $doTransaction; // boolean
-  public $state; // string
-  public $incrementId; // long
-  public $createdAt; // string
-  public $updatedAt; // string
-  public $baseCurrencyCode; // string
-  public $baseToGlobalRate; // double
-  public $baseToOrderRate; // double
-  public $baseShippingTaxAmount; // double
-  public $baseShippingAmount; // double
-  public $baseAdjustmentPositive; // double
-  public $baseAdjustmentNegative; // double
-  public $baseSubtotal; // double
-  public $baseSubtotalInclTax; // double
-  public $baseGrandTotal; // double
-  public $baseTaxAmount; // double
-  public $baseDiscountAmount; // double
-  public $baseShippingInclTax; // double
-  public $baseCost; // double
-  public $baseAdjustment; // double
-  public $baseHiddenTaxAmount; // double
-  public $items; // ArrayOfMagentoCreditMemoItem
-}
-
-class Email {
-  public $defaultMailingType; // string
-  public $folder; // string
-  public $class; // string
-  public $id; // long
-  public $type; // string
-  public $templateId; // long
-  public $name; // string
-  public $campaignId; // long
-  public $fromAddress; // string
-  public $fromName; // string
-  public $replyToAddress; // string
-  public $replyToName; // string
-  public $subject; // string
-  public $createdBy; // string
-  public $createdAt; // string
-  public $modifiedBy; // string
-  public $modifiedAt; // string
-  public $htmlContent; // string
-  public $htmlBlocks; // ArrayOfEmailBlockContainer
-  public $textContent; // string
-}
-
-
 /**
- * clangAPI class
- * 
- *  
- * 
+ * ClangAPI class
+ *
+ *
+ *
  * @author    {author}
  * @copyright {copyright}
  * @package   {package}
  */
-class clangAPI extends \SoapClient {
+class ClangAPI extends \SoapClient {
 
   private static $classmap = array(
                                     'Option' => '\Clang\Option',
@@ -619,7 +59,7 @@ class clangAPI extends \SoapClient {
   }
 
   /**
-   *  
+   *
    *
    * @param string $uuid
    * @return list(integer $code, ArrayOfOption $msg)
@@ -633,7 +73,7 @@ class clangAPI extends \SoapClient {
   }
 
   /**
-   *  
+   *
    *
    * @param string $uuid
    * @param long $campaignId
@@ -649,7 +89,7 @@ class clangAPI extends \SoapClient {
   }
 
   /**
-   *  
+   *
    *
    * @param string $uuid
    * @param long $campaignId
@@ -665,7 +105,7 @@ class clangAPI extends \SoapClient {
   }
 
   /**
-   *  
+   *
    *
    * @param string $uuid
    * @param long $campaignId
@@ -680,7 +120,7 @@ class clangAPI extends \SoapClient {
   }
 
   /**
-   *  
+   *
    *
    * @param string $uuid
    * @param long $campaignId
@@ -696,7 +136,7 @@ class clangAPI extends \SoapClient {
   }
 
   /**
-   *  
+   *
    *
    * @param string $uuid
    * @param long $campaignId
@@ -712,7 +152,7 @@ class clangAPI extends \SoapClient {
   }
 
   /**
-   *  
+   *
    *
    * @param string $uuid
    * @param long $campaignId
@@ -728,7 +168,7 @@ class clangAPI extends \SoapClient {
   }
 
   /**
-   *  
+   *
    *
    * @param string $uuid
    * @return list(integer $code, ArrayOfMethodOptions $msg)
@@ -742,7 +182,7 @@ class clangAPI extends \SoapClient {
   }
 
   /**
-   *  
+   *
    *
    * @param string $uuid
    * @return list(integer $code, Sms $msg)
@@ -756,7 +196,7 @@ class clangAPI extends \SoapClient {
   }
 
   /**
-   *  
+   *
    *
    * @param string $uuid
    * @param long $smsId
@@ -771,7 +211,7 @@ class clangAPI extends \SoapClient {
   }
 
   /**
-   *  
+   *
    *
    * @param string $uuid
    * @param long $smsId
@@ -789,7 +229,7 @@ class clangAPI extends \SoapClient {
   }
 
   /**
-   *  
+   *
    *
    * @param string $uuid
    * @param long $smsId
@@ -807,7 +247,7 @@ class clangAPI extends \SoapClient {
   }
 
   /**
-   *  
+   *
    *
    * @param string $uuid
    * @return list(integer $code, ArrayOfSms $msg)
@@ -821,7 +261,7 @@ class clangAPI extends \SoapClient {
   }
 
   /**
-   *  
+   *
    *
    * @param string $uuid
    * @param long $smsId
@@ -836,7 +276,7 @@ class clangAPI extends \SoapClient {
   }
 
   /**
-   *  
+   *
    *
    * @param string $uuid
    * @param Sms $sms
@@ -851,7 +291,7 @@ class clangAPI extends \SoapClient {
   }
 
   /**
-   *  
+   *
    *
    * @param string $uuid
    * @param Sms $sms
@@ -866,7 +306,7 @@ class clangAPI extends \SoapClient {
   }
 
   /**
-   *  
+   *
    *
    * @param string $uuid
    * @param long $smsId
@@ -882,7 +322,7 @@ class clangAPI extends \SoapClient {
   }
 
   /**
-   *  
+   *
    *
    * @param string $uuid
    * @param long $broadcastId
@@ -897,7 +337,7 @@ class clangAPI extends \SoapClient {
   }
 
   /**
-   *  
+   *
    *
    * @param string $uuid
    * @param Sms $sms
@@ -912,7 +352,7 @@ class clangAPI extends \SoapClient {
   }
 
   /**
-   *  
+   *
    *
    * @param string $uuid
    * @param Sms $sms
@@ -927,7 +367,7 @@ class clangAPI extends \SoapClient {
   }
 
   /**
-   *  
+   *
    *
    * @param string $uuid
    * @param long $smsId
@@ -944,7 +384,7 @@ class clangAPI extends \SoapClient {
   }
 
   /**
-   *  
+   *
    *
    * @param string $uuid
    * @param long $resourceId
@@ -960,7 +400,7 @@ class clangAPI extends \SoapClient {
   }
 
   /**
-   *  
+   *
    *
    * @param string $uuid
    * @param long $resourceId
@@ -977,7 +417,7 @@ class clangAPI extends \SoapClient {
   }
 
   /**
-   *  
+   *
    *
    * @param string $uuid
    * @param string $campaignObjectId
@@ -992,7 +432,7 @@ class clangAPI extends \SoapClient {
   }
 
   /**
-   *  
+   *
    *
    * @param string $uuid
    * @param long $campaignId
@@ -1007,7 +447,7 @@ class clangAPI extends \SoapClient {
   }
 
   /**
-   *  
+   *
    *
    * @param string $uuid
    * @param long $campaignId
@@ -1022,7 +462,7 @@ class clangAPI extends \SoapClient {
   }
 
   /**
-   *  
+   *
    *
    * @param string $uuid
    * @param ArrayOfCustomer $customers
@@ -1039,7 +479,7 @@ class clangAPI extends \SoapClient {
   }
 
   /**
-   *  
+   *
    *
    * @param string $uuid
    * @return list(integer $code, Customer $msg)
@@ -1053,7 +493,7 @@ class clangAPI extends \SoapClient {
   }
 
   /**
-   *  
+   *
    *
    * @param string $uuid
    * @param Customer $customer
@@ -1068,7 +508,7 @@ class clangAPI extends \SoapClient {
   }
 
   /**
-   *  
+   *
    *
    * @param string $uuid
    * @param Customer $customer
@@ -1083,7 +523,7 @@ class clangAPI extends \SoapClient {
   }
 
   /**
-   *  
+   *
    *
    * @param string $uuid
    * @param Customer $customer
@@ -1100,7 +540,7 @@ class clangAPI extends \SoapClient {
   }
 
   /**
-   *  
+   *
    *
    * @param string $uuid
    * @param long $customerId
@@ -1115,7 +555,7 @@ class clangAPI extends \SoapClient {
   }
 
   /**
-   *  
+   *
    *
    * @param string $uuid
    * @param string $accountId
@@ -1131,7 +571,7 @@ class clangAPI extends \SoapClient {
   }
 
   /**
-   *  
+   *
    *
    * @param string $uuid
    * @param long $customerId
@@ -1146,7 +586,7 @@ class clangAPI extends \SoapClient {
   }
 
   /**
-   *  
+   *
    *
    * @param string $uuid
    * @return list(integer $code, long $msg)
@@ -1160,7 +600,7 @@ class clangAPI extends \SoapClient {
   }
 
   /**
-   *  
+   *
    *
    * @param string $uuid
    * @param Customer $customer
@@ -1175,7 +615,7 @@ class clangAPI extends \SoapClient {
   }
 
   /**
-   *  
+   *
    *
    * @param string $uuid
    * @param string $emailAddress
@@ -1190,7 +630,7 @@ class clangAPI extends \SoapClient {
   }
 
   /**
-   *  
+   *
    *
    * @param string $uuid
    * @param string $mobilePhone
@@ -1205,7 +645,7 @@ class clangAPI extends \SoapClient {
   }
 
   /**
-   *  
+   *
    *
    * @param string $uuid
    * @param string $externalId
@@ -1220,7 +660,7 @@ class clangAPI extends \SoapClient {
   }
 
   /**
-   *  
+   *
    *
    * @param string $uuid
    * @param string $userName
@@ -1236,7 +676,7 @@ class clangAPI extends \SoapClient {
   }
 
   /**
-   *  
+   *
    *
    * @param string $uuid
    * @param Customer $customer
@@ -1251,7 +691,7 @@ class clangAPI extends \SoapClient {
   }
 
   /**
-   *  
+   *
    *
    * @param string $uuid
    * @return list(integer $code, long $msg)
@@ -1265,7 +705,7 @@ class clangAPI extends \SoapClient {
   }
 
   /**
-   *  
+   *
    *
    * @param string $uuid
    * @param Customer $customer
@@ -1280,7 +720,7 @@ class clangAPI extends \SoapClient {
   }
 
   /**
-   *  
+   *
    *
    * @param string $uuid
    * @param long $resourceId
@@ -1295,7 +735,7 @@ class clangAPI extends \SoapClient {
   }
 
   /**
-   *  
+   *
    *
    * @param string $uuid
    * @param long $resourceId
@@ -1310,7 +750,7 @@ class clangAPI extends \SoapClient {
   }
 
   /**
-   *  
+   *
    *
    * @param string $uuid
    * @param Mailing $mailing
@@ -1325,7 +765,7 @@ class clangAPI extends \SoapClient {
   }
 
   /**
-   *  
+   *
    *
    * @param string $uuid
    * @param Mailing $mailing
@@ -1340,7 +780,7 @@ class clangAPI extends \SoapClient {
   }
 
   /**
-   *  
+   *
    *
    * @param string $uuid
    * @param string $campaignObjectId
@@ -1355,7 +795,7 @@ class clangAPI extends \SoapClient {
   }
 
   /**
-   *  
+   *
    *
    * @param string $uuid
    * @param string $fromDate
@@ -1371,7 +811,7 @@ class clangAPI extends \SoapClient {
   }
 
   /**
-   *  
+   *
    *
    * @param string $uuid
    * @return list(integer $code, long $msg)
@@ -1385,7 +825,7 @@ class clangAPI extends \SoapClient {
   }
 
   /**
-   *  
+   *
    *
    * @param string $uuid
    * @param long $mailingId
@@ -1400,7 +840,7 @@ class clangAPI extends \SoapClient {
   }
 
   /**
-   *  
+   *
    *
    * @param string $uuid
    * @return list(integer $code, long $msg)
@@ -1414,7 +854,7 @@ class clangAPI extends \SoapClient {
   }
 
   /**
-   *  
+   *
    *
    * @param string $uuid
    * @param string $fromDate
@@ -1430,7 +870,7 @@ class clangAPI extends \SoapClient {
   }
 
   /**
-   *  
+   *
    *
    * @param string $uuid
    * @param Mailing $mailing
@@ -1445,7 +885,7 @@ class clangAPI extends \SoapClient {
   }
 
   /**
-   *  
+   *
    *
    * @param string $uuid
    * @param Mailing $mailing
@@ -1460,7 +900,7 @@ class clangAPI extends \SoapClient {
   }
 
   /**
-   *  
+   *
    *
    * @param string $uuid
    * @param long $resourceId
@@ -1476,7 +916,7 @@ class clangAPI extends \SoapClient {
   }
 
   /**
-   *  
+   *
    *
    * @param string $uuid
    * @param long $resourceId
@@ -1493,7 +933,7 @@ class clangAPI extends \SoapClient {
   }
 
   /**
-   *  
+   *
    *
    * @param string $uuid
    * @param long $resourceId
@@ -1510,7 +950,7 @@ class clangAPI extends \SoapClient {
   }
 
   /**
-   *  
+   *
    *
    * @param string $uuid
    * @return list(integer $code, MagentoCategory $msg)
@@ -1524,7 +964,7 @@ class clangAPI extends \SoapClient {
   }
 
   /**
-   *  
+   *
    *
    * @param string $uuid
    * @param MagentoCategory $category
@@ -1539,7 +979,7 @@ class clangAPI extends \SoapClient {
   }
 
   /**
-   *  
+   *
    *
    * @param string $uuid
    * @param string $campaignObjectStatisiticsOptionId
@@ -1554,7 +994,7 @@ class clangAPI extends \SoapClient {
   }
 
   /**
-   *  
+   *
    *
    * @param string $uuid
    * @param MailingLink $mailingLink
@@ -1569,7 +1009,7 @@ class clangAPI extends \SoapClient {
   }
 
   /**
-   *  
+   *
    *
    * @param string $uuid
    * @param MagentoOrder $order
@@ -1584,7 +1024,7 @@ class clangAPI extends \SoapClient {
   }
 
   /**
-   *  
+   *
    *
    * @param string $uuid
    * @return list(integer $code, MagentoOrder $msg)
@@ -1598,7 +1038,7 @@ class clangAPI extends \SoapClient {
   }
 
   /**
-   *  
+   *
    *
    * @param string $uuid
    * @param MagentoOrder $order
@@ -1613,7 +1053,7 @@ class clangAPI extends \SoapClient {
   }
 
   /**
-   *  
+   *
    *
    * @param string $uuid
    * @param ArrayOfMagentoOrder $orders
@@ -1628,7 +1068,7 @@ class clangAPI extends \SoapClient {
   }
 
   /**
-   *  
+   *
    *
    * @param string $uuid
    * @return list(integer $code, MagentoAbandonedOrder $msg)
@@ -1642,7 +1082,7 @@ class clangAPI extends \SoapClient {
   }
 
   /**
-   *  
+   *
    *
    * @param string $uuid
    * @param MagentoAbandonedOrder $order
@@ -1657,7 +1097,7 @@ class clangAPI extends \SoapClient {
   }
 
   /**
-   *  
+   *
    *
    * @param string $uuid
    * @param ArrayOfOption $keywords
@@ -1673,7 +1113,7 @@ class clangAPI extends \SoapClient {
   }
 
   /**
-   *  
+   *
    *
    * @param string $uuid
    * @param long $resourceId
@@ -1689,7 +1129,7 @@ class clangAPI extends \SoapClient {
   }
 
   /**
-   *  
+   *
    *
    * @param string $uuid
    * @param long $resourceId
@@ -1706,7 +1146,7 @@ class clangAPI extends \SoapClient {
   }
 
   /**
-   *  
+   *
    *
    * @param string $uuid
    * @param long $resourceId
@@ -1723,7 +1163,7 @@ class clangAPI extends \SoapClient {
   }
 
   /**
-   *  
+   *
    *
    * @param string $uuid
    * @param MagentoEmail $email
@@ -1739,7 +1179,7 @@ class clangAPI extends \SoapClient {
   }
 
   /**
-   *  
+   *
    *
    * @param string $uuid
    * @param Group $group
@@ -1755,7 +1195,7 @@ class clangAPI extends \SoapClient {
   }
 
   /**
-   *  
+   *
    *
    * @param string $uuid
    * @param long $groupId
@@ -1772,7 +1212,7 @@ class clangAPI extends \SoapClient {
   }
 
   /**
-   *  
+   *
    *
    * @param string $uuid
    * @param long $groupId
@@ -1787,7 +1227,7 @@ class clangAPI extends \SoapClient {
   }
 
   /**
-   *  
+   *
    *
    * @param string $uuid
    * @param long $groupId
@@ -1802,7 +1242,7 @@ class clangAPI extends \SoapClient {
   }
 
   /**
-   *  
+   *
    *
    * @param string $uuid
    * @param long $groupId
@@ -1818,7 +1258,7 @@ class clangAPI extends \SoapClient {
   }
 
   /**
-   *  
+   *
    *
    * @param string $uuid
    * @param Group $group
@@ -1833,7 +1273,7 @@ class clangAPI extends \SoapClient {
   }
 
   /**
-   *  
+   *
    *
    * @param string $uuid
    * @param Group $group
@@ -1849,7 +1289,7 @@ class clangAPI extends \SoapClient {
   }
 
   /**
-   *  
+   *
    *
    * @param string $uuid
    * @param Group $group
@@ -1864,7 +1304,7 @@ class clangAPI extends \SoapClient {
   }
 
   /**
-   *  
+   *
    *
    * @param string $uuid
    * @return list(integer $code, Group $msg)
@@ -1878,7 +1318,7 @@ class clangAPI extends \SoapClient {
   }
 
   /**
-   *  
+   *
    *
    * @param string $uuid
    * @param Group $group
@@ -1893,7 +1333,7 @@ class clangAPI extends \SoapClient {
   }
 
   /**
-   *  
+   *
    *
    * @param string $uuid
    * @param Group $group
@@ -1908,7 +1348,7 @@ class clangAPI extends \SoapClient {
   }
 
   /**
-   *  
+   *
    *
    * @param string $uuid
    * @param Group $group
@@ -1923,7 +1363,7 @@ class clangAPI extends \SoapClient {
   }
 
   /**
-   *  
+   *
    *
    * @param string $uuid
    * @return list(integer $code, ArrayOfGroup $msg)
@@ -1937,7 +1377,7 @@ class clangAPI extends \SoapClient {
   }
 
   /**
-   *  
+   *
    *
    * @param string $uuid
    * @param Group $group
@@ -1952,7 +1392,7 @@ class clangAPI extends \SoapClient {
   }
 
   /**
-   *  
+   *
    *
    * @param string $uuid
    * @param Group $group
@@ -1968,7 +1408,7 @@ class clangAPI extends \SoapClient {
   }
 
   /**
-   *  
+   *
    *
    * @param string $uuid
    * @param Group $group
@@ -1984,7 +1424,7 @@ class clangAPI extends \SoapClient {
   }
 
   /**
-   *  
+   *
    *
    * @param string $uuid
    * @return list(integer $code, boolean $msg)
@@ -1998,7 +1438,7 @@ class clangAPI extends \SoapClient {
   }
 
   /**
-   *  
+   *
    *
    * @param string $uuid
    * @param long $resourceId
@@ -2014,7 +1454,7 @@ class clangAPI extends \SoapClient {
   }
 
   /**
-   *  
+   *
    *
    * @param string $uuid
    * @param long $resourceId
@@ -2031,7 +1471,7 @@ class clangAPI extends \SoapClient {
   }
 
   /**
-   *  
+   *
    *
    * @param string $uuid
    * @param long $resourceId
@@ -2048,7 +1488,7 @@ class clangAPI extends \SoapClient {
   }
 
   /**
-   *  
+   *
    *
    * @param string $uuid
    * @param long $clickId
@@ -2063,7 +1503,7 @@ class clangAPI extends \SoapClient {
   }
 
   /**
-   *  
+   *
    *
    * @param string $uuid
    * @param long $resourceId
@@ -2079,7 +1519,7 @@ class clangAPI extends \SoapClient {
   }
 
   /**
-   *  
+   *
    *
    * @param string $uuid
    * @param long $resourceId
@@ -2096,7 +1536,7 @@ class clangAPI extends \SoapClient {
   }
 
   /**
-   *  
+   *
    *
    * @param string $uuid
    * @param long $resourceId
@@ -2113,7 +1553,7 @@ class clangAPI extends \SoapClient {
   }
 
   /**
-   *  
+   *
    *
    * @param string $uuid
    * @param MagentoShipment $shipment
@@ -2128,7 +1568,7 @@ class clangAPI extends \SoapClient {
   }
 
   /**
-   *  
+   *
    *
    * @param string $uuid
    * @return list(integer $code, MagentoShipment $msg)
@@ -2142,7 +1582,7 @@ class clangAPI extends \SoapClient {
   }
 
   /**
-   *  
+   *
    *
    * @param string $uuid
    * @param MagentoCreditMemo $creditmemo
@@ -2157,7 +1597,7 @@ class clangAPI extends \SoapClient {
   }
 
   /**
-   *  
+   *
    *
    * @param string $uuid
    * @param long $resourceId
@@ -2173,7 +1613,7 @@ class clangAPI extends \SoapClient {
   }
 
   /**
-   *  
+   *
    *
    * @param string $uuid
    * @param long $resourceId
@@ -2190,7 +1630,7 @@ class clangAPI extends \SoapClient {
   }
 
   /**
-   *  
+   *
    *
    * @param string $uuid
    * @param long $resourceId
@@ -2207,7 +1647,7 @@ class clangAPI extends \SoapClient {
   }
 
   /**
-   *  
+   *
    *
    * @param string $uuid
    * @param Email $email
@@ -2222,7 +1662,7 @@ class clangAPI extends \SoapClient {
   }
 
   /**
-   *  
+   *
    *
    * @param string $uuid
    * @param Email $email
@@ -2237,7 +1677,7 @@ class clangAPI extends \SoapClient {
   }
 
   /**
-   *  
+   *
    *
    * @param string $uuid
    * @param Email $email
@@ -2252,7 +1692,7 @@ class clangAPI extends \SoapClient {
   }
 
   /**
-   *  
+   *
    *
    * @param string $uuid
    * @param long $emailId
@@ -2267,7 +1707,7 @@ class clangAPI extends \SoapClient {
   }
 
   /**
-   *  
+   *
    *
    * @param string $uuid
    * @return list(integer $code, ArrayOfMethodOptions $msg)
@@ -2281,7 +1721,7 @@ class clangAPI extends \SoapClient {
   }
 
   /**
-   *  
+   *
    *
    * @param string $uuid
    * @param long $emailId
@@ -2299,7 +1739,7 @@ class clangAPI extends \SoapClient {
   }
 
   /**
-   *  
+   *
    *
    * @param string $uuid
    * @param long $emailId
@@ -2317,7 +1757,7 @@ class clangAPI extends \SoapClient {
   }
 
   /**
-   *  
+   *
    *
    * @param string $uuid
    * @param long $emailId
@@ -2335,7 +1775,7 @@ class clangAPI extends \SoapClient {
   }
 
   /**
-   *  
+   *
    *
    * @param string $uuid
    * @param long $emailId
@@ -2353,7 +1793,7 @@ class clangAPI extends \SoapClient {
   }
 
   /**
-   *  
+   *
    *
    * @param string $uuid
    * @param Email $email
@@ -2368,7 +1808,7 @@ class clangAPI extends \SoapClient {
   }
 
   /**
-   *  
+   *
    *
    * @param string $uuid
    * @param long $emailId
@@ -2383,7 +1823,7 @@ class clangAPI extends \SoapClient {
   }
 
   /**
-   *  
+   *
    *
    * @param string $uuid
    * @return list(integer $code, ArrayOfEmail $msg)
@@ -2397,7 +1837,7 @@ class clangAPI extends \SoapClient {
   }
 
   /**
-   *  
+   *
    *
    * @param string $uuid
    * @param long $broadcastId
@@ -2412,7 +1852,7 @@ class clangAPI extends \SoapClient {
   }
 
   /**
-   *  
+   *
    *
    * @param string $uuid
    * @return list(integer $code, Email $msg)
@@ -2426,7 +1866,7 @@ class clangAPI extends \SoapClient {
   }
 
   /**
-   *  
+   *
    *
    * @param string $uuid
    * @param long $resourceId
@@ -2442,7 +1882,7 @@ class clangAPI extends \SoapClient {
   }
 
   /**
-   *  
+   *
    *
    * @param string $uuid
    * @param long $resourceId
@@ -2459,7 +1899,7 @@ class clangAPI extends \SoapClient {
   }
 
   /**
-   *  
+   *
    *
    * @param string $uuid
    * @param long $resourceId
@@ -2476,7 +1916,7 @@ class clangAPI extends \SoapClient {
   }
 
   /**
-   *  
+   *
    *
    * @param string $uuid
    * @param long $customerId
@@ -2493,7 +1933,7 @@ class clangAPI extends \SoapClient {
   }
 
   /**
-   *  
+   *
    *
    * @param string $uuid
    * @param long $customerId
@@ -2510,7 +1950,7 @@ class clangAPI extends \SoapClient {
   }
 
   /**
-   *  
+   *
    *
    * @param string $uuid
    * @param long $bounceId
@@ -2525,7 +1965,7 @@ class clangAPI extends \SoapClient {
   }
 
   /**
-   *  
+   *
    *
    * @param string $uuid
    * @param MagentoProduct $product
@@ -2541,7 +1981,7 @@ class clangAPI extends \SoapClient {
   }
 
   /**
-   *  
+   *
    *
    * @param string $uuid
    * @return list(integer $code, MagentoProduct $msg)
@@ -2555,7 +1995,7 @@ class clangAPI extends \SoapClient {
   }
 
   /**
-   *  
+   *
    *
    * @param string $uuid
    * @param ArrayOfCustomer $customers
@@ -2572,7 +2012,7 @@ class clangAPI extends \SoapClient {
   }
 
   /**
-   *  
+   *
    *
    * @param string $uuid
    * @param Customer $customer
@@ -2588,7 +2028,7 @@ class clangAPI extends \SoapClient {
   }
 
   /**
-   *  
+   *
    *
    * @param string $uuid
    * @return list(integer $code, ArrayOfOption $msg)
@@ -2602,7 +2042,7 @@ class clangAPI extends \SoapClient {
   }
 
   /**
-   *  
+   *
    *
    * @param string $uuid
    * @param string $lang
@@ -2617,7 +2057,7 @@ class clangAPI extends \SoapClient {
   }
 
   /**
-   *  
+   *
    *
    * @param string $uuid
    * @param string $wsdl
@@ -2634,7 +2074,7 @@ class clangAPI extends \SoapClient {
   }
 
   /**
-   *  
+   *
    *
    * @param string $uuid
    * @param ArrayOfInt $customerIds
@@ -2649,7 +2089,7 @@ class clangAPI extends \SoapClient {
   }
 
   /**
-   *  
+   *
    *
    * @param string $uuid
    * @param long $openId

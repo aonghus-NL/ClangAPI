@@ -1,0 +1,61 @@
+<?php
+namespace Clang;
+
+class MagentoOrder {
+  public $quoteId; // string
+  public $subtotalInclTax; // double
+  public $couponCode; // string
+  public $totalQtyOrdered; // long
+  public $weight; // double
+  public $taxString; // string
+  public $shippingInclTax; // double
+  public $discountDescription; // string
+  public $shippingDiscountAmount; // double
+  public $totalItemCount; // long
+  public $status; // string
+  public $externalOrderId; // string
+  public $note; // string
+  public $id; // long
+  public $storeview; // string
+  public $customerId; // long
+  public $subtotal; // double
+  public $total; // double
+  public $taxAmount; // double
+  public $shippingCost; // double
+  public $discount; // double
+  public $currency; // string
+  public $rewardPoints; // long
+  public $billingFirstname; // string
+  public $billingMiddlename; // string
+  public $billingTitle; // string
+  public $billingLastname; // string
+  public $billingAddress; // string
+  public $billingZipCode; // string
+  public $billingPoBox; // long
+  public $billingCity; // string
+  public $billingState; // string
+  public $billingCountry; // string
+  public $billingCompanyName; // string
+  public $billingPhone; // string
+  public $billingEmailAddress; // string
+  public $shippingFirstname; // string
+  public $shippingMiddlename; // string
+  public $shippingTitle; // string
+  public $shippingLastname; // string
+  public $shippingAddress; // string
+  public $shippingZipCode; // string
+  public $shippingPoBox; // long
+  public $shippingCity; // string
+  public $shippingState; // string
+  public $shippingCountry; // string
+  public $shippingCompanyName; // string
+  public $shippingPhone; // string
+  public $paymentMethod; // string
+  public $shippingMethod; // string
+  public $orderDate; // long
+  public $products; // ArrayOfMagentoProduct
+  public $billingPrefix; // string
+  public $billingSuffix; // string
+  public $shippingPrefix; // string
+  public $shippingSuffix; // string
+}
