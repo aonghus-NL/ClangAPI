@@ -1,6 +1,8 @@
 <?php
 namespace Clang;
 
+use SoapClient;
+
 /**
  * ClangAPI class
  *
@@ -10,7 +12,7 @@ namespace Clang;
  * @copyright {copyright}
  * @package   {package}
  */
-class ClangAPI extends \SoapClient {
+class ClangAPI extends SoapClient {
 
   private static $classmap = array(
                                     'Option' => '\Clang\Option',
