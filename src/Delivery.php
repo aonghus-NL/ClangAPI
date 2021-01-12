@@ -2,25 +2,69 @@
 namespace Clang;
 
 class Delivery {
-    public string $id; // string
-    public string $status; // string
-    public Customer $customer; // Customer
-    public int $mailingId; // long
-    public string $deliveryDate; // string
-    public string $firstOpenDate; // string
-    public string $lastOpenDate; // string
-    public string $firstClickDate; // string
-    public string $lastClickDate; // string
+    /**
+     * @var string
+     */
+    public $id;
+
+    /**
+     * @var string
+     */
+    public $status;
+
+    /**
+     * @var Customer
+     */
+    public Customer $customer;
+
+    /**
+     * @var int
+     */
+    public $mailingId;
+
+    /**
+     * @var string
+     */
+    public $deliveryDate;
+
+    /**
+     * @var string
+     */
+    public $firstOpenDate;
+
+    /**
+     * @var string
+     */
+    public $lastOpenDate;
+
+    /**
+     * @var string
+     */
+    public $firstClickDate;
+
+    /**
+     * @var string
+     */
+    public $lastClickDate;
+
 
     /**
      * @var Open[]
      */
-    public array $opens; // ArrayOfOpen
+    public $opens;
 
     /**
      * @var Click[]
      */
-    public array $clicks; // ArrayOfClick
-    public Bounce $bounce; // Bounce
-    public Complaint $complaint; // Complaint
+    public $clicks;
+
+    /**
+     * @var Bounce
+     */
+    public $bounce;
+
+    /**
+     * @var Complaint
+     */
+    public $complaint;
 }

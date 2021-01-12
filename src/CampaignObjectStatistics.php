@@ -2,11 +2,18 @@
 namespace Clang;
 
 class CampaignObjectStatistics {
-  public int $campaignId; // long
-  public int $campaignObjectId; // long
+  /**
+   * @var int
+   */
+  public $campaignId;
+
+  /**
+   * @var int
+   */
+  public $campaignObjectId;
 
   /**
    * @var CampaignObjectStatisticsOption[]
    */
-  public array $options; // ArrayOfCampaignObjectStatisticsOption
+  public $options;
 }

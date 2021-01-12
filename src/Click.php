@@ -2,10 +2,34 @@
 namespace Clang;
 
 class Click {
+
+  /**
+   * @var MailingLink
+   */
   public MailingLink $link; // MailingLink
-  public int $id; // long
-  public int $customerId; // long
-  public int $mailingId; // long
-  public string $clickedAt; // string
-  public BrowserInformation $browserInformation; // BrowserInformation
+
+  /**
+   * @var int
+   */
+  public $id;
+
+  /**
+   * @var int
+   */
+  public $customerId;
+
+  /**
+   * @var int
+   */
+  public $mailingId;
+
+  /**
+   * @var string
+   */
+  public $clickedAt;
+
+  /**
+   * @var BrowserInformation
+   */
+  public $browserInformation;
 }

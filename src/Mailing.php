@@ -2,31 +2,115 @@
 namespace Clang;
 
 class Mailing {
-  public string $plannedFor; // string
-  public int $uniqueClicks; // long
-  public int $uniqueOpens; // long
-  public int $received; // long
-  public int $campaignId; // long
-  public string $campaignName; // string
-  public int $id; // long
-  public string $contentName; // string
-  public string $sourceType; // string
-  public string $sourceName; // string
-  public int $customers; // long
-  public int $throttle; // long
-  public string $status; // string
+
+  /**
+   * @var string
+   */
+  public $plannedFor;
+
+  /**
+   * @var int
+   */
+  public $uniqueClicks;
+
+  /**
+   * @var int
+   */
+  public $uniqueOpens;
+
+  /**
+   * @var int
+   */
+  public $received;
+
+  /**
+   * @var int
+   */
+  public $campaignId;
+
+  /**
+   * @var string
+   */
+  public $campaignName;
+
+  /**
+   * @var int
+   */
+  public $id;
+
+  /**
+   * @var string
+   */
+  public $contentName;
+
+  /**
+   * @var string
+   */
+  public $sourceType;
+
+  /**
+   * @var string
+   */
+  public $sourceName;
+
+  /**
+   * @var int
+   */
+  public $customers;
+
+  /**
+   * @var int
+   */
+  public $throttle;
+
+  /**
+   * @var string
+   */
+  public $status;
 
   /**
    * @var MailingLink[]
    */
-  public array $links; // ArrayOfMailingLink
+  public $links;
 
-  public string $type; // string
-  public string $description; // string
-  public string $startedAt; // string
-  public string $endedAt; // string
-  public int $bounces; // long
-  public int $opens; // long
-  public int $clicks; // long
-  public int $complaints; // long
+  /**
+   * @var string
+   */
+  public $type;
+
+  /**
+   * @var string
+   */
+  public $description;
+
+  /**
+   * @var string
+   */
+  public $startedAt;
+
+  /**
+   * @var string
+   */
+  public $endedAt;
+
+  /**
+   * @var int
+   */
+  public $bounces;
+
+  /**
+   * @var int
+   */
+  public $opens;
+
+  /**
+   * @var int
+   */
+  public $clicks;
+
+  /**
+   * @var int
+   */
+  public $complaints;
+
 }

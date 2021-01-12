@@ -2,7 +2,20 @@
 namespace Clang;
 
 class Tag {
-  public int $id; // long
-  public string $name; // string
-  public int $weight; // long
+
+  /**
+   * @var int
+   */
+  public $id;
+
+  /**
+   * @var string
+   */
+  public $name;
+
+  /**
+   * @var int
+   */
+  public $weight;
+
 }

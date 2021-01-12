@@ -2,20 +2,65 @@
 namespace Clang;
 
 class MagentoAbandonedOrder {
-  public int $id; // long
-  public int $quoteId; // long
-  public string $storeview; // string
-  public int $storeviewId; // long
-  public int $customerId; // long
-  public float $subtotal; // double
-  public float $total; // double
-  public float $taxAmount; // double
-  public float $discount; // double
-  public string $currency; // string
-  public int $createDate; // long
+
+  /**
+   * @var int
+   */
+  public $id;
+
+  /**
+   * @var int
+   */
+  public $quoteId;
+
+  /**
+   * @var string
+   */
+  public $storeview;
+
+  /**
+   * @var int
+   */
+  public $storeviewId;
+
+  /**
+   * @var int
+   */
+  public $customerId;
+
+  /**
+   * @var float
+   */
+  public $subtotal;
+
+  /**
+   * @var float
+   */
+  public $total;
+
+  /**
+   * @var float
+   */
+  public $taxAmount;
+
+  /**
+   * @var float
+   */
+  public $discount;
+
+  /**
+   * @var string
+   */
+  public $currency;
+
+  /**
+   * @var int
+   */
+  public $createDate;
 
   /**
    * @var MagentoProduct[]
    */
-  public array $products; // ArrayOfMagentoProduct
+  public $products;
+
 }

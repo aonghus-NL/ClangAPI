@@ -2,13 +2,30 @@
 namespace Clang;
 
 class SmsBlockContainer {
-  public int $id; // long
-  public string $name; // string
-  public string $type; // string
-  public int $defaultBlockId; // long
+
+  /**
+   * @var int
+   */
+  public $id;
+
+  /**
+   * @var string
+   */
+  public $name;
+
+  /**
+   * @var string
+   */
+  public $type;
+
+  /**
+   * @var int
+   */
+  public $defaultBlockId;
 
   /**
    * @var SmsBlock[]
    */
-  public array $blocks; // ArrayOfSmsBlock
+  public $blocks;
+
 }

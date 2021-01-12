@@ -2,65 +2,285 @@
 namespace Clang;
 
 class MagentoOrder {
-  public string $quoteId; // string
-  public float $subtotalInclTax; // double
-  public string $couponCode; // string
-  public int $totalQtyOrdered; // long
-  public float $weight; // double
-  public string $taxString; // string
-  public float $shippingInclTax; // double
-  public string $discountDescription; // string
-  public float $shippingDiscountAmount; // double
-  public int $totalItemCount; // long
-  public string $status; // string
-  public string $externalOrderId; // string
-  public string $note; // string
-  public int $id; // long
-  public string $storeview; // string
-  public int $customerId; // long
-  public float $subtotal; // double
-  public float $total; // double
-  public float $taxAmount; // double
-  public float $shippingCost; // double
-  public float $discount; // double
-  public string $currency; // string
-  public int $rewardPoints; // long
-  public string $billingFirstname; // string
-  public string $billingMiddlename; // string
-  public string $billingTitle; // string
-  public string $billingLastname; // string
-  public string $billingAddress; // string
-  public string $billingZipCode; // string
-  public int $billingPoBox; // long
-  public string $billingCity; // string
-  public string $billingState; // string
-  public string $billingCountry; // string
-  public string $billingCompanyName; // string
-  public string $billingPhone; // string
-  public string $billingEmailAddress; // string
-  public string $shippingFirstname; // string
-  public string $shippingMiddlename; // string
-  public string $shippingTitle; // string
-  public string $shippingLastname; // string
-  public string $shippingAddress; // string
-  public string $shippingZipCode; // string
-  public int $shippingPoBox; // long
-  public string $shippingCity; // string
-  public string $shippingState; // string
-  public string $shippingCountry; // string
-  public string $shippingCompanyName; // string
-  public string $shippingPhone; // string
-  public string $paymentMethod; // string
-  public string $shippingMethod; // string
-  public int $orderDate; // long
+
+  /**
+   * @var string
+   */
+  public $quoteId;
+
+  /**
+   * @var float
+   */
+  public $subtotalInclTax;
+
+  /**
+   * @var string
+   */
+  public $couponCode;
+
+  /**
+   * @var int
+   */
+  public $totalQtyOrdered;
+
+  /**
+   * @var float
+   */
+  public $weight;
+
+  /**
+   * @var string
+   */
+  public $taxString;
+
+  /**
+   * @var float
+   */
+  public $shippingInclTax;
+
+  /**
+   * @var string
+   */
+  public $discountDescription;
+
+  /**
+   * @var float
+   */
+  public $shippingDiscountAmount;
+
+  /**
+   * @var int
+   */
+  public $totalItemCount;
+
+  /**
+   * @var string
+   */
+  public $status;
+
+  /**
+   * @var string
+   */
+  public $externalOrderId;
+
+  /**
+   * @var string
+   */
+  public $note;
+
+  /**
+   * @var int
+   */
+  public $id;
+
+  /**
+   * @var string
+   */
+  public $storeview;
+
+  /**
+   * @var int
+   */
+  public $customerId;
+
+  /**
+   * @var float
+   */
+  public $subtotal;
+
+  /**
+   * @var float
+   */
+  public $total;
+
+  /**
+   * @var float
+   */
+  public $taxAmount;
+
+  /**
+   * @var float
+   */
+  public $shippingCost;
+
+  /**
+   * @var float
+   */
+  public $discount;
+
+  /**
+   * @var string
+   */
+  public $currency;
+
+  /**
+   * @var int
+   */
+  public $rewardPoints;
+
+  /**
+   * @var string
+   */
+  public $billingFirstname;
+
+  /**
+   * @var string
+   */
+  public $billingMiddlename;
+
+  /**
+   * @var string
+   */
+  public $billingTitle;
+
+  /**
+   * @var string
+   */
+  public $billingLastname;
+
+  /**
+   * @var string
+   */
+  public $billingAddress;
+
+  /**
+   * @var string
+   */
+  public $billingZipCode;
+
+  /**
+   * @var int
+   */
+  public $billingPoBox;
+
+  /**
+   * @var string
+   */
+  public $billingCity;
+
+  /**
+   * @var string
+   */
+  public $billingState;
+
+  /**
+   * @var string
+   */
+  public $billingCountry;
+
+  /**
+   * @var string
+   */
+  public $billingCompanyName;
+
+  /**
+   * @var string
+   */
+  public $billingPhone;
+
+  /**
+   * @var string
+   */
+  public $billingEmailAddress;
+
+  /**
+   * @var string
+   */
+  public $shippingFirstname;
+
+  /**
+   * @var string
+   */
+  public $shippingMiddlename;
+
+  /**
+   * @var string
+   */
+  public $shippingTitle;
+
+  /**
+   * @var string
+   */
+  public $shippingLastname;
+
+  /**
+   * @var string
+   */
+  public $shippingAddress;
+
+  /**
+   * @var string
+   */
+  public $shippingZipCode;
+
+  /**
+   * @var int
+   */
+  public $shippingPoBox;
+
+  /**
+   * @var string
+   */
+  public $shippingCity;
+
+  /**
+   * @var string
+   */
+  public $shippingState;
+
+  /**
+   * @var string
+   */
+  public $shippingCountry;
+
+  /**
+   * @var string
+   */
+  public $shippingCompanyName;
+
+  /**
+   * @var string
+   */
+  public $shippingPhone;
+
+  /**
+   * @var string
+   */
+  public $paymentMethod;
+
+  /**
+   * @var string
+   */
+  public $shippingMethod;
+
+  /**
+   * @var int
+   */
+  public $orderDate;
 
   /**
    * @var MagentoProduct[]
    */
-  public array $products; // ArrayOfMagentoProduct
+  public $products;
 
-  public string $billingPrefix; // string
-  public string $billingSuffix; // string
-  public string $shippingPrefix; // string
-  public string $shippingSuffix; // string
+  /**
+   * @var string
+   */
+  public $billingPrefix;
+
+  /**
+   * @var string
+   */
+  public $billingSuffix;
+
+  /**
+   * @var string
+   */
+  public $shippingPrefix;
+
+  /**
+   * @var string
+   */
+  public $shippingSuffix;
+
 }

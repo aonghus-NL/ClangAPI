@@ -2,9 +2,28 @@
 namespace Clang;
 
 class CampaignStatistics {
-  public int $smsableCustomers; // long
-  public int $uniqueCustomers; // long
-  public int $mailableCustomers; // long
-  public int $uniqueEmailAddresses; // long
-  public int $uniqueMobilePhoneNumbers; // long
+  /**
+   * @var int
+   */
+  public $smsableCustomers;
+
+  /**
+   * @var int
+   */
+  public $uniqueCustomers;
+
+  /**
+   * @var int
+   */
+  public $mailableCustomers;
+
+  /**
+   * @var int
+   */
+  public $uniqueEmailAddresses;
+
+  /**
+   * @var int
+   */
+  public $uniqueMobilePhoneNumbers;
 }

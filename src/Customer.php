@@ -2,73 +2,309 @@
 namespace Clang;
 
 class Customer {
+
   /**
    * @var Account[]
    */
-  public ?array $accounts; // ArrayOfAccount
+  public $accounts;
 
-  public string $smsOptIn; // string
-  public string $optIn; // string
-  public int $id; // long
-  public string $title; // string
-  public string $lastname; // string
-  public string $firstname; // string
-  public string $middlename; // string
-  public string $prefix; // string
-  public string $suffix; // string
-  public string $initials; // string
-  public string $gender; // string
-  public string $maritalStatus; // string
-  public string $birthday; // string
-  public string $birthplace; // string
-  public string $address; // string
-  public string $address2; // string
-  public string $address3; // string
-  public string $addressNumber; // string
-  public string $addressNumberSuffix; // string
-  public string $zipCode; // string
-  public string $poBox; // string
-  public string $city; // string
-  public string $state; // string
-  public string $country; // string
-  public string $companyName; // string
-  public string $department; // string
-  public string $alternateAddress; // string
-  public string $alternateAddress2; // string
-  public string $alternateAddress3; // string
-  public string $alternateAddressNumber; // string
-  public string $alternateAddressNumberSuffix; // string
-  public string $alternateZipCode; // string
-  public string $alternateCity; // string
-  public string $alternateState; // string
-  public string $alternateCountry; // string
-  public string $contactMan; // string
-  public string $jobTitle; // string
-  public string $workPhone; // string
-  public string $workExtension; // string
-  public string $workMobile; // string
-  public string $homePhone; // string
-  public string $mobilePhone; // string
-  public string $faxNumber; // string
-  public string $emailAddress; // string
-  public string $alternateEmailAddress; // string
-  public string $emailType; // string
-  public string $mailStatus; // string
-  public int $softBounceCount; // long
-  public int $hardBounceCount; // long
-  public string $website; // string
-  public string $imageUrl; // string
-  public string $status; // string
-  public string $externalId; // string
-  public string $userName; // string
-  public string $password; // string
-  public string $createdBy; // string
-  public string $createdAt; // string
-  public string $modifiedBy; // string
-  public string $modifiedAt; // string
+  /**
+   * @var string
+   */
+  public $smsOptIn;
+
+  /**
+   * @var string
+   */
+  public $optIn;
+
+  /**
+   * @var int
+   */
+  public $id;
+
+  /**
+   * @var string
+   */
+  public $title;
+
+  /**
+   * @var string
+   */
+  public $lastname;
+
+  /**
+   * @var string
+   */
+  public $firstname;
+
+  /**
+   * @var string
+   */
+  public $middlename;
+
+  /**
+   * @var string
+   */
+  public $prefix;
+
+  /**
+   * @var string
+   */
+  public $suffix;
+
+  /**
+   * @var string
+   */
+  public $initials;
+
+  /**
+   * @var string
+   */
+  public $gender;
+
+  /**
+   * @var string
+   */
+  public $maritalStatus;
+
+  /**
+   * @var string
+   */
+  public $birthday;
+
+  /**
+   * @var string
+   */
+  public $birthplace;
+
+  /**
+   * @var string
+   */
+  public $address;
+
+  /**
+   * @var string
+   */
+  public $address2;
+
+  /**
+   * @var string
+   */
+  public $address3;
+
+  /**
+   * @var string
+   */
+  public $addressNumber;
+
+  /**
+   * @var string
+   */
+  public $addressNumberSuffix;
+
+  /**
+   * @var string
+   */
+  public $zipCode;
+
+  /**
+   * @var string
+   */
+  public $poBox;
+
+  /**
+   * @var string
+   */
+  public $city;
+
+  /**
+   * @var string
+   */
+  public $state;
+
+  /**
+   * @var string
+   */
+  public $country;
+
+  /**
+   * @var string
+   */
+  public $companyName;
+
+  /**
+   * @var string
+   */
+  public $department;
+
+  /**
+   * @var string
+   */
+  public $alternateAddress;
+
+  /**
+   * @var string
+   */
+  public $alternateAddress2;
+
+  /**
+   * @var string
+   */
+  public $alternateAddress3;
+
+  /**
+   * @var string
+   */
+  public $alternateAddressNumber;
+
+  /**
+   * @var string
+   */
+  public $alternateAddressNumberSuffix;
+
+  /**
+   * @var string
+   */
+  public $alternateZipCode;
+
+  /**
+   * @var string
+   */
+  public $alternateCity;
+
+  /**
+   * @var string
+   */
+  public $alternateState;
+
+  /**
+   * @var string
+   */
+  public $alternateCountry;
+
+  /**
+   * @var string
+   */
+  public $contactMan;
+
+  /**
+   * @var string
+   */
+  public $jobTitle;
+
+  /**
+   * @var string
+   */
+  public $workPhone;
+
+  /**
+   * @var string
+   */
+  public $workExtension;
+
+  /**
+   * @var string
+   */
+  public $workMobile;
+
+  /**
+   * @var string
+   */
+  public $homePhone;
+
+  /**
+   * @var string
+   */
+  public $mobilePhone;
+
+  /**
+   * @var string
+   */
+  public $faxNumber;
+
+  /**
+   * @var string
+   */
+  public $emailAddress;
+
+  /**
+   * @var string
+   */
+  public $alternateEmailAddress;
+
+  /**
+   * @var string
+   */
+  public $emailType;
+
+  /**
+   * @var string
+   */
+  public $mailStatus;
+
+  /**
+   * @var int
+   */
+  public $softBounceCount;
+
+  /**
+   * @var int
+   */
+  public $hardBounceCount;
+
+  /**
+   * @var string
+   */
+  public $website;
+
+  /**
+   * @var string
+   */
+  public $imageUrl;
+
+  /**
+   * @var string
+   */
+  public $status;
+
+  /**
+   * @var string
+   */
+  public $externalId;
+
+  /**
+   * @var string
+   */
+  public $userName;
+
+  /**
+   * @var string
+   */
+  public $password;
+
+  /**
+   * @var string
+   */
+  public $createdBy;
+
+  /**
+   * @var string
+   */
+  public $createdAt;
+
+  /**
+   * @var string
+   */
+  public $modifiedBy;
+
+  /**
+   * @var string
+   */
+  public $modifiedAt;
 
   /**
    * @var CustomerOption[]
    */
-  public array $options; // ArrayOfCustomerOption
+  public $options;
 }

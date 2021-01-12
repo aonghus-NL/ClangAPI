@@ -2,44 +2,100 @@
 namespace Clang;
 
 class MagentoProduct {
-  public int $storeId; // long
-  public int $orderItemId; // long
+
+  /**
+   * @var int
+   */
+  public $storeId;
+
+  /**
+   * @var int
+   */
+  public $orderItemId;
 
   /**
    * @var Option[]
    */
-  public array $attributes; // ArrayOfOption
+  public $attributes;
 
-  public int $id; // long
-  public int $externalProductId; // long
-  public string $sku; // string
-  public string $name; // string
-  public string $description; // string
-  public string $url; // string
-  public string $image; // string
-  public int $orderId; // long
-  public int $quantity; // long
-  public float $priceEx; // double
-  public float $price; // double
-  public float $discount; // double
+  /**
+   * @var int
+   */
+  public $id;
+
+  /**
+   * @var int
+   */
+  public $externalProductId;
+
+  /**
+   * @var string
+   */
+  public $sku;
+
+  /**
+   * @var string
+   */
+  public $name;
+
+  /**
+   * @var string
+   */
+  public $description;
+
+  /**
+   * @var string
+   */
+  public $url;
+
+  /**
+   * @var string
+   */
+  public $image;
+
+  /**
+   * @var int
+   */
+  public $orderId;
+
+  /**
+   * @var int
+   */
+  public $quantity;
+
+  /**
+   * @var float
+   */
+  public $priceEx;
+
+  /**
+   * @var float
+   */
+  public $price;
+
+  /**
+   * @var float
+   */
+  public $discount;
 
   /**
    * @var MagentoCategory[]
    */
-  public array $categories; // ArrayOfMagentoCategory
+  public $categories;
 
   /**
    * @var int[]
    */
-  public array $related; // ArrayOfInt
+  public $related;
 
   /**
    * @var int[]
    */
-  public array $upSell; // ArrayOfInt
+  public $upSell;
 
   /**
    * @var int[]
    */
-  public array $crossSell; // ArrayOfInt
+  public $crossSell;
+
 }

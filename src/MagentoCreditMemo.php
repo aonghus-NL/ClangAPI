@@ -2,53 +2,229 @@
 namespace Clang;
 
 class MagentoCreditMemo {
-  public int $id; // long
-  public string $externalOrderId; // string
-  public int $customerId; // long
-  public string $globalCurrencyCode; // string
-  public string $storeCurrencyCode; // string
-  public string $orderCurrencyCode; // string
-  public float $storeToBaseRate; // double
-  public float $storeToOrderRate; // double
-  public string $discountDescription; // string
-  public float $shippingTaxAmount; // double
-  public int $totalQuantity; // long
-  public string $adjustmentPositive; // string
-  public string $adjustmentNegative; // string
-  public float $subtotal; // double
-  public float $subtotalInclTax; // double
-  public float $grandTotal; // double
-  public float $taxAmount; // double
-  public float $discountAmount; // double
-  public float $shippingAmount; // double
-  public float $shippingInclTax; // double
-  public string $adjustment; // string
-  public float $hiddenTaxAmount; // double
-  public string $offlineRequested; // string
-  public bool $doTransaction; // boolean
-  public string $state; // string
-  public int $incrementId; // long
-  public string $createdAt; // string
-  public string $updatedAt; // string
-  public string $baseCurrencyCode; // string
-  public float $baseToGlobalRate; // double
-  public float $baseToOrderRate; // double
-  public float $baseShippingTaxAmount; // double
-  public float $baseShippingAmount; // double
-  public float $baseAdjustmentPositive; // double
-  public float $baseAdjustmentNegative; // double
-  public float $baseSubtotal; // double
-  public float $baseSubtotalInclTax; // double
-  public float $baseGrandTotal; // double
-  public float $baseTaxAmount; // double
-  public float $baseDiscountAmount; // double
-  public float $baseShippingInclTax; // double
-  public float $baseCost; // double
-  public float $baseAdjustment; // double
-  public float $baseHiddenTaxAmount; // double
+
+  /**
+   * @var int
+   */
+  public $id;
+
+  /**
+   * @var string
+   */
+  public $externalOrderId;
+
+  /**
+   * @var int
+   */
+  public $customerId;
+
+  /**
+   * @var string
+   */
+  public $globalCurrencyCode;
+
+  /**
+   * @var string
+   */
+  public $storeCurrencyCode;
+
+  /**
+   * @var string
+   */
+  public $orderCurrencyCode;
+
+  /**
+   * @var float
+   */
+  public $storeToBaseRate;
+
+  /**
+   * @var float
+   */
+  public $storeToOrderRate;
+
+  /**
+   * @var string
+   */
+  public $discountDescription;
+
+  /**
+   * @var float
+   */
+  public $shippingTaxAmount;
+
+  /**
+   * @var int
+   */
+  public $totalQuantity;
+
+  /**
+   * @var string
+   */
+  public $adjustmentPositive;
+
+  /**
+   * @var string
+   */
+  public $adjustmentNegative;
+
+  /**
+   * @var float
+   */
+  public $subtotal;
+
+  /**
+   * @var float
+   */
+  public $subtotalInclTax;
+
+  /**
+   * @var float
+   */
+  public $grandTotal;
+
+  /**
+   * @var float
+   */
+  public $taxAmount;
+
+  /**
+   * @var float
+   */
+  public $discountAmount;
+
+  /**
+   * @var float
+   */
+  public $shippingAmount;
+
+  /**
+   * @var float
+   */
+  public $shippingInclTax;
+
+  /**
+   * @var string
+   */
+  public $adjustment;
+
+  /**
+   * @var float
+   */
+  public $hiddenTaxAmount;
+
+  /**
+   * @var string
+   */
+  public $offlineRequested;
+
+  /**
+   * @var bool
+   */
+  public $doTransaction;
+
+  /**
+   * @var string
+   */
+  public $state;
+
+  /**
+   * @var int
+   */
+  public $incrementId;
+
+  /**
+   * @var string
+   */
+  public $createdAt;
+
+  /**
+   * @var string
+   */
+  public $updatedAt;
+
+  /**
+   * @var string
+   */
+  public $baseCurrencyCode;
+
+  /**
+   * @var float
+   */
+  public $baseToGlobalRate;
+
+  /**
+   * @var float
+   */
+  public $baseToOrderRate;
+
+  /**
+   * @var float
+   */
+  public $baseShippingTaxAmount;
+
+  /**
+   * @var float
+   */
+  public $baseShippingAmount;
+
+  /**
+   * @var float
+   */
+  public $baseAdjustmentPositive;
+
+  /**
+   * @var float
+   */
+  public $baseAdjustmentNegative;
+
+  /**
+   * @var float
+   */
+  public $baseSubtotal;
+
+  /**
+   * @var float
+   */
+  public $baseSubtotalInclTax;
+
+  /**
+   * @var float
+   */
+  public $baseGrandTotal;
+
+  /**
+   * @var float
+   */
+  public $baseTaxAmount;
+
+  /**
+   * @var float
+   */
+  public $baseDiscountAmount;
+
+  /**
+   * @var float
+   */
+  public $baseShippingInclTax;
+
+  /**
+   * @var float
+   */
+  public $baseCost;
+
+  /**
+   * @var float
+   */
+  public $baseAdjustment;
+
+  /**
+   * @var float
+   */
+  public $baseHiddenTaxAmount;
 
   /**
    * @var MagentoCreditMemoItem[]
    */
-  public array $items; // ArrayOfMagentoCreditMemoItem
+  public $items;
 }

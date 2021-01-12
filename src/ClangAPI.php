@@ -14,7 +14,10 @@ use SoapClient;
  */
 class ClangAPI extends SoapClient {
 
-  private static array $classmap = [
+  /**
+   * @var string[]
+   */
+  private static $classmap = [
     'Option' => '\Clang\Option',
     'MethodOptions' => '\Clang\MethodOptions',
     'SmsBlock' => '\Clang\SmsBlock',
@@ -82,7 +85,7 @@ class ClangAPI extends SoapClient {
    * @param Option[] $options
    * @return list(int $code, Option[] $msg)
    */
-  public function campaign_execute(string $uuid, int $campaignId, array $options): array {
+  public function campaign_execute(string $uuid, $campaignId, array $options): array {
     return $this->__soapCall('campaign_execute', [$uuid, $campaignId, $options], [
         'uri' => 'https://login.myclang.com/app/api/soap/public/index.php?version=1.22',
         'soapaction' => ''
@@ -98,7 +101,7 @@ class ClangAPI extends SoapClient {
    * @param Option[] $options
    * @return list(int $code, boolean $msg)
    */
-  public function campaign_executeAsync(string $uuid, int $campaignId, array $options): array {
+  public function campaign_executeAsync(string $uuid, $campaignId, array $options): array {
     return $this->__soapCall('campaign_executeAsync', [$uuid, $campaignId, $options], [
         'uri' => 'https://login.myclang.com/app/api/soap/public/index.php?version=1.22',
         'soapaction' => ''
@@ -113,7 +116,7 @@ class ClangAPI extends SoapClient {
    * @param int $campaignId
    * @return list(int $code, int $msg)
    */
-  public function campaign_getMembers(string $uuid, int $campaignId): array {
+  public function campaign_getMembers(string $uuid, $campaignId): array {
     return $this->__soapCall('campaign_getMembers', [$uuid, $campaignId], [
         'uri' => 'https://login.myclang.com/app/api/soap/public/index.php?version=1.22',
         'soapaction' => ''
@@ -129,7 +132,7 @@ class ClangAPI extends SoapClient {
    * @param int $customerId
    * @return list(int $code, boolean $msg)
    */
-  public function campaign_hasMember(string $uuid, int $campaignId, int $customerId): array {
+  public function campaign_hasMember(string $uuid, $campaignId, $customerId): array {
     return $this->__soapCall('campaign_hasMember', [$uuid, $campaignId, $customerId], [
         'uri' => 'https://login.myclang.com/app/api/soap/public/index.php?version=1.22',
         'soapaction' => ''
@@ -145,7 +148,7 @@ class ClangAPI extends SoapClient {
    * @param int $customerId
    * @return list(int $code, boolean $msg)
    */
-  public function campaign_addMember(string $uuid, int $campaignId, int $customerId): array {
+  public function campaign_addMember(string $uuid, $campaignId, $customerId): array {
     return $this->__soapCall('campaign_addMember', [$uuid, $campaignId, $customerId], [
         'uri' => 'https://login.myclang.com/app/api/soap/public/index.php?version=1.22',
         'soapaction' => ''
@@ -161,7 +164,7 @@ class ClangAPI extends SoapClient {
    * @param int $customerId
    * @return list(int $code, boolean $msg)
    */
-  public function campaign_removeMember(string $uuid, int $campaignId, int $customerId): array {
+  public function campaign_removeMember(string $uuid, $campaignId, $customerId): array {
     return $this->__soapCall('campaign_removeMember', [$uuid, $campaignId, $customerId], [
         'uri' => 'https://login.myclang.com/app/api/soap/public/index.php?version=1.22',
         'soapaction' => ''
@@ -204,7 +207,7 @@ class ClangAPI extends SoapClient {
    * @param int $smsId
    * @return list(int $code, boolean $msg)
    */
-  public function sms_delete(string $uuid, int $smsId): array {
+  public function sms_delete(string $uuid, $smsId): array {
     return $this->__soapCall('sms_delete', [$uuid, $smsId], [
         'uri' => 'https://login.myclang.com/app/api/soap/public/index.php?version=1.22',
         'soapaction' => ''
@@ -222,7 +225,7 @@ class ClangAPI extends SoapClient {
    * @param Option[] $options
    * @return list(int $code, boolean $msg)
    */
-  public function sms_sendToCustomer(string $uuid, int $smsId, int $customerId, array $manualOptions, array $options): array {
+  public function sms_sendToCustomer(string $uuid, $smsId, $customerId, array $manualOptions, array $options): array {
     return $this->__soapCall('sms_sendToCustomer', [$uuid, $smsId, $customerId, $manualOptions, $options], [
         'uri' => 'https://login.myclang.com/app/api/soap/public/index.php?version=1.22',
         'soapaction' => ''
@@ -240,7 +243,7 @@ class ClangAPI extends SoapClient {
    * @param Option[] $options
    * @return list(int $code, boolean $msg)
    */
-  public function sms_sendToCustomers(string $uuid, int $smsId, array $customerIds, array $manualOptions, array $options): array {
+  public function sms_sendToCustomers(string $uuid, $smsId, array $customerIds, array $manualOptions, array $options): array {
     return $this->__soapCall('sms_sendToCustomers', [$uuid, $smsId, $customerIds, $manualOptions, $options], [
         'uri' => 'https://login.myclang.com/app/api/soap/public/index.php?version=1.22',
         'soapaction' => ''
@@ -269,7 +272,7 @@ class ClangAPI extends SoapClient {
    * @param int $smsId
    * @return list(int $code, Sms $msg)
    */
-  public function sms_getById(string $uuid, int $smsId): array {
+  public function sms_getById(string $uuid, $smsId): array {
     return $this->__soapCall('sms_getById', [$uuid, $smsId], [
         'uri' => 'https://login.myclang.com/app/api/soap/public/index.php?version=1.22',
         'soapaction' => ''
@@ -315,7 +318,7 @@ class ClangAPI extends SoapClient {
    * @param int $profileId
    * @return list(int $code, boolean $msg)
    */
-  public function sms_sendToProfile(string $uuid, int $smsId, int $profileId): array {
+  public function sms_sendToProfile(string $uuid, $smsId, $profileId): array {
     return $this->__soapCall('sms_sendToProfile', [$uuid, $smsId, $profileId], [
         'uri' => 'https://login.myclang.com/app/api/soap/public/index.php?version=1.22',
         'soapaction' => ''
@@ -377,7 +380,7 @@ class ClangAPI extends SoapClient {
    * @param Option[] $options
    * @return list(int $code, boolean $msg)
    */
-  public function sms_sendToGroup(string $uuid, int $smsId, int $groupId, array $options): array {
+  public function sms_sendToGroup(string $uuid, $smsId, $groupId, array $options): array {
     return $this->__soapCall('sms_sendToGroup', [$uuid, $smsId, $groupId, $options], [
           'uri' => 'https://login.myclang.com/app/api/soap/public/index.php?version=1.22',
           'soapaction' => ''
@@ -393,7 +396,7 @@ class ClangAPI extends SoapClient {
    * @param int $index
    * @return list(int $code, Delivery $msg)
    */
-  public function deliverySet_getDelivery(string $uuid, int $resourceId, int $index): array {
+  public function deliverySet_getDelivery(string $uuid, $resourceId, $index): array {
     return $this->__soapCall('deliverySet_getDelivery', [$uuid, $resourceId, $index], [
         'uri' => 'https://login.myclang.com/app/api/soap/public/index.php?version=1.22',
         'soapaction' => ''
@@ -410,7 +413,7 @@ class ClangAPI extends SoapClient {
    * @param int $size
    * @return list(int $code, Delivery[] $msg)
    */
-  public function deliverySet_getDeliveries(string $uuid, int $resourceId, int $offset, int $size): array {
+  public function deliverySet_getDeliveries(string $uuid, $resourceId, $offset, $size): array {
     return $this->__soapCall('deliverySet_getDeliveries', [$uuid, $resourceId, $offset, $size], [
         'uri' => 'https://login.myclang.com/app/api/soap/public/index.php?version=1.22',
         'soapaction' => ''
@@ -425,7 +428,7 @@ class ClangAPI extends SoapClient {
    * @param string $campaignObjectId
    * @return list(int $code, CampaignObjectStatistics $msg)
    */
-  public function campaignObjectStatistics_getByCampaignObjectId(string $uuid, string $campaignObjectId): array {
+  public function campaignObjectStatistics_getByCampaignObjectId(string $uuid, $campaignObjectId): array {
     return $this->__soapCall('campaignObjectStatistics_getByCampaignObjectId', [$uuid, $campaignObjectId], [
           'uri' => 'https://login.myclang.com/app/api/soap/public/index.php?version=1.22',
           'soapaction' => ''
@@ -440,7 +443,7 @@ class ClangAPI extends SoapClient {
    * @param int $campaignId
    * @return list(int $code, CampaignStatistics $msg)
    */
-  public function campaignStatistics_getByCampaignId(string $uuid, int $campaignId): array {
+  public function campaignStatistics_getByCampaignId(string $uuid, $campaignId): array {
     return $this->__soapCall('campaignStatistics_getByCampaignId', [$uuid, $campaignId], [
           'uri' => 'https://login.myclang.com/app/api/soap/public/index.php?version=1.22',
           'soapaction' => ''
@@ -455,7 +458,7 @@ class ClangAPI extends SoapClient {
    * @param int $campaignId
    * @return list(int $code, int $msg)
    */
-  public function campaignStatistics_getCustomerSet(string $uuid, int $campaignId): array {
+  public function campaignStatistics_getCustomerSet(string $uuid, $campaignId): array {
     return $this->__soapCall('campaignStatistics_getCustomerSet', [$uuid, $campaignId], [
         'uri' => 'https://login.myclang.com/app/api/soap/public/index.php?version=1.22',
         'soapaction' => ''
@@ -548,7 +551,7 @@ class ClangAPI extends SoapClient {
    * @param int $customerId
    * @return list(int $code, Customer $msg)
    */
-  public function customer_getById(string $uuid, int $customerId): array {
+  public function customer_getById(string $uuid, $customerId): array {
     return $this->__soapCall('customer_getById', [$uuid, $customerId], [
         'uri' => 'https://login.myclang.com/app/api/soap/public/index.php?version=1.22',
         'soapaction' => ''
@@ -564,7 +567,7 @@ class ClangAPI extends SoapClient {
    * @param string $network
    * @return list(int $code, Customer $msg)
    */
-  public function customer_getByAccountId(string $uuid, string $accountId, string $network): array {
+  public function customer_getByAccountId(string $uuid, $accountId, $network): array {
     return $this->__soapCall('customer_getByAccountId', [$uuid, $accountId, $network], [
         'uri' => 'https://login.myclang.com/app/api/soap/public/index.php?version=1.22',
         'soapaction' => ''
@@ -623,7 +626,7 @@ class ClangAPI extends SoapClient {
    * @param string $emailAddress
    * @return list(int $code, Customer[] $msg)
    */
-  public function customer_getByEmailAddress(string $uuid, string $emailAddress): array {
+  public function customer_getByEmailAddress(string $uuid, $emailAddress): array {
     return $this->__soapCall('customer_getByEmailAddress', [$uuid, $emailAddress], [
         'uri' => 'https://login.myclang.com/app/api/soap/public/index.php?version=1.22',
         'soapaction' => ''
@@ -638,7 +641,7 @@ class ClangAPI extends SoapClient {
    * @param string $mobilePhone
    * @return list(int $code, Customer[] $msg)
    */
-  public function customer_getByMobilePhone(string $uuid, string $mobilePhone): array {
+  public function customer_getByMobilePhone(string $uuid, $mobilePhone): array {
     return $this->__soapCall('customer_getByMobilePhone', [$uuid, $mobilePhone], [
         'uri' => 'https://login.myclang.com/app/api/soap/public/index.php?version=1.22',
         'soapaction' => ''
@@ -653,7 +656,7 @@ class ClangAPI extends SoapClient {
    * @param string $externalId
    * @return list(int $code, Customer[] $msg)
    */
-  public function customer_getByExternalId(string $uuid, string $externalId): array {
+  public function customer_getByExternalId(string $uuid, $externalId): array {
     return $this->__soapCall('customer_getByExternalId', [$uuid, $externalId], [
           'uri' => 'https://login.myclang.com/app/api/soap/public/index.php?version=1.22',
           'soapaction' => ''
@@ -669,7 +672,7 @@ class ClangAPI extends SoapClient {
    * @param string $password
    * @return list(int $code, Customer[] $msg)
    */
-  public function customer_getByUserNameAndPassword(string $uuid, string $userName, string $password): array {
+  public function customer_getByUserNameAndPassword(string $uuid, $userName, $password): array {
     return $this->__soapCall('customer_getByUserNameAndPassword', [$uuid, $userName, $password], [
         'uri' => 'https://login.myclang.com/app/api/soap/public/index.php?version=1.22',
         'soapaction' => ''
@@ -728,7 +731,7 @@ class ClangAPI extends SoapClient {
    * @param int $resourceId
    * @return list(int $code, Resource $msg)
    */
-  public function resource_getById(string $uuid, int $resourceId): array {
+  public function resource_getById(string $uuid, $resourceId): array {
     return $this->__soapCall('resource_getById', [$uuid, $resourceId], [
         'uri' => 'https://login.myclang.com/app/api/soap/public/index.php?version=1.22',
         'soapaction' => ''
@@ -743,7 +746,7 @@ class ClangAPI extends SoapClient {
    * @param int $resourceId
    * @return list(int $code, boolean $msg)
    */
-  public function resource_free(string $uuid, int $resourceId): array {
+  public function resource_free(string $uuid, $resourceId): array {
     return $this->__soapCall('resource_free', [$uuid, $resourceId], [
         'uri' => 'https://login.myclang.com/app/api/soap/public/index.php?version=1.22',
         'soapaction' => ''
@@ -788,7 +791,7 @@ class ClangAPI extends SoapClient {
    * @param string $campaignObjectId
    * @return list(int $code, int $msg)
    */
-  public function mailing_getByCampaignObjectId(string $uuid, string $campaignObjectId): array {
+  public function mailing_getByCampaignObjectId(string $uuid, $campaignObjectId): array {
     return $this->__soapCall('mailing_getByCampaignObjectId', [$uuid, $campaignObjectId], [
         'uri' => 'https://login.myclang.com/app/api/soap/public/index.php?version=1.22',
         'soapaction' => ''
@@ -833,7 +836,7 @@ class ClangAPI extends SoapClient {
    * @param int $mailingId
    * @return list(int $code, Mailing $msg)
    */
-  public function mailing_getById(string $uuid, int $mailingId): array {
+  public function mailing_getById(string $uuid, $mailingId): array {
     return $this->__soapCall('mailing_getById', [$uuid, $mailingId], [
         'uri' => 'https://login.myclang.com/app/api/soap/public/index.php?version=1.22',
         'soapaction' => ''
@@ -909,7 +912,7 @@ class ClangAPI extends SoapClient {
    * @param int $index
    * @return list(int $code, Bounce $msg)
    */
-  public function bounceSet_getBounce(string $uuid, int $resourceId, int $index): array {
+  public function bounceSet_getBounce(string $uuid, $resourceId, $index): array {
     return $this->__soapCall('bounceSet_getBounce', [$uuid, $resourceId, $index], [
         'uri' => 'https://login.myclang.com/app/api/soap/public/index.php?version=1.22',
         'soapaction' => ''
@@ -926,7 +929,7 @@ class ClangAPI extends SoapClient {
    * @param int $size
    * @return list(int $code, Bounce[] $msg)
    */
-  public function bounceSet_getBounces(string $uuid, int $resourceId, int $offset, int $size): array {
+  public function bounceSet_getBounces(string $uuid, $resourceId, $offset, $size): array {
     return $this->__soapCall('bounceSet_getBounces', [$uuid, $resourceId, $offset, $size], [
         'uri' => 'https://login.myclang.com/app/api/soap/public/index.php?version=1.22',
         'soapaction' => ''
@@ -943,7 +946,7 @@ class ClangAPI extends SoapClient {
    * @param int $size
    * @return list(int $code, int[] $msg)
    */
-  public function bounceSet_getBounceIds(string $uuid, int $resourceId, int $offset, int $size): array {
+  public function bounceSet_getBounceIds(string $uuid, $resourceId, $offset, $size): array {
     return $this->__soapCall('bounceSet_getBounceIds', [$uuid, $resourceId, $offset, $size], [
         'uri' => 'https://login.myclang.com/app/api/soap/public/index.php?version=1.22',
         'soapaction' => ''
@@ -1122,7 +1125,7 @@ class ClangAPI extends SoapClient {
    * @param int $index
    * @return list(int $code, Click $msg)
    */
-  public function clickSet_getClick(string $uuid, int $resourceId, int $index): array {
+  public function clickSet_getClick(string $uuid, $resourceId, $index): array {
     return $this->__soapCall('clickSet_getClick', [$uuid, $resourceId, $index], [
         'uri' => 'https://login.myclang.com/app/api/soap/public/index.php?version=1.22',
         'soapaction' => ''
@@ -1139,7 +1142,7 @@ class ClangAPI extends SoapClient {
    * @param int $size
    * @return list(int $code, Click[] $msg)
    */
-  public function clickSet_getClicks(string $uuid, int $resourceId, int $offset, int $size): array {
+  public function clickSet_getClicks(string $uuid, $resourceId, $offset, $size): array {
     return $this->__soapCall('clickSet_getClicks', [$uuid, $resourceId, $offset, $size], [
         'uri' => 'https://login.myclang.com/app/api/soap/public/index.php?version=1.22',
         'soapaction' => ''
@@ -1156,7 +1159,7 @@ class ClangAPI extends SoapClient {
    * @param int $size
    * @return list(int $code, int[] $msg)
    */
-  public function clickSet_getClickIds(string $uuid, int $resourceId, int $offset, int $size): array {
+  public function clickSet_getClickIds(string $uuid, $resourceId, $offset, $size): array {
     return $this->__soapCall('clickSet_getClickIds', [$uuid, $resourceId, $offset, $size], [
         'uri' => 'https://login.myclang.com/app/api/soap/public/index.php?version=1.22',
         'soapaction' => ''
@@ -1172,7 +1175,7 @@ class ClangAPI extends SoapClient {
    * @param string $campaignName
    * @return list(int $code, int $msg)
    */
-  public function magentoEmail_insert(string $uuid, MagentoEmail $email, string $campaignName): array {
+  public function magentoEmail_insert(string $uuid, MagentoEmail $email, $campaignName): array {
     return $this->__soapCall('magentoEmail_insert', [$uuid, $email, $campaignName], [
         'uri' => 'https://login.myclang.com/app/api/soap/public/index.php?version=1.22',
         'soapaction' => ''
@@ -1202,10 +1205,10 @@ class ClangAPI extends SoapClient {
    * @param string $uuid
    * @param int $groupId
    * @param int $customerId
-   * @param boolean $includeSubGroups
+   * @param bool $includeSubGroups
    * @return list(int $code, GroupMembership $msg)
    */
-  public function group_hasMember(string $uuid, int $groupId, int $customerId, bool $includeSubGroups): array {
+  public function group_hasMember(string $uuid, $groupId, $customerId, $includeSubGroups): array {
     return $this->__soapCall('group_hasMember', [$uuid, $groupId, $customerId, $includeSubGroups], [
         'uri' => 'https://login.myclang.com/app/api/soap/public/index.php?version=1.22',
         'soapaction' => ''
@@ -1220,7 +1223,7 @@ class ClangAPI extends SoapClient {
    * @param int $groupId
    * @return list(int $code, Group $msg)
    */
-  public function group_getById(string $uuid, int $groupId): array {
+  public function group_getById(string $uuid, $groupId): array {
     return $this->__soapCall('group_getById', [$uuid, $groupId], [
         'uri' => 'https://login.myclang.com/app/api/soap/public/index.php?version=1.22',
         'soapaction' => ''
@@ -1235,7 +1238,7 @@ class ClangAPI extends SoapClient {
    * @param int $groupId
    * @return list(int $code, boolean $msg)
    */
-  public function group_delete(string $uuid, int $groupId): array {
+  public function group_delete(string $uuid, $groupId): array {
     return $this->__soapCall('group_delete', [$uuid, $groupId], [
         'uri' => 'https://login.myclang.com/app/api/soap/public/index.php?version=1.22',
         'soapaction' => ''
@@ -1248,10 +1251,10 @@ class ClangAPI extends SoapClient {
    *
    * @param string $uuid
    * @param int $groupId
-   * @param boolean $recursive
+   * @param bool $recursive
    * @return list(int $code, int $msg)
    */
-  public function group_getMembers(string $uuid, int $groupId, bool $recursive): array {
+  public function group_getMembers(string $uuid, $groupId, $recursive): array {
     return $this->__soapCall('group_getMembers', [$uuid, $groupId, $recursive], [
         'uri' => 'https://login.myclang.com/app/api/soap/public/index.php?version=1.22',
         'soapaction' => ''
@@ -1282,7 +1285,7 @@ class ClangAPI extends SoapClient {
    * @param int $newParentId
    * @return list(int $code, Group $msg)
    */
-  public function group_move(string $uuid, Group $group, int $newParentId): array {
+  public function group_move(string $uuid, Group $group, $newParentId): array {
     return $this->__soapCall('group_move', [$uuid, $group, $newParentId], [
         'uri' => 'https://login.myclang.com/app/api/soap/public/index.php?version=1.22',
         'soapaction' => ''
@@ -1447,7 +1450,7 @@ class ClangAPI extends SoapClient {
    * @param int $index
    * @return list(int $code, Mailing $msg)
    */
-  public function mailingSet_getMailing(string $uuid, int $resourceId, int $index): array {
+  public function mailingSet_getMailing(string $uuid, $resourceId, $index): array {
     return $this->__soapCall('mailingSet_getMailing', [$uuid, $resourceId, $index], [
         'uri' => 'https://login.myclang.com/app/api/soap/public/index.php?version=1.22',
         'soapaction' => ''
@@ -1464,7 +1467,7 @@ class ClangAPI extends SoapClient {
    * @param int $size
    * @return list(int $code, Mailing[] $msg)
    */
-  public function mailingSet_getMailings(string $uuid, int $resourceId, int $offset, int $size): array {
+  public function mailingSet_getMailings(string $uuid, $resourceId, $offset, $size): array {
     return $this->__soapCall('mailingSet_getMailings', [$uuid, $resourceId, $offset, $size], [
         'uri' => 'https://login.myclang.com/app/api/soap/public/index.php?version=1.22',
         'soapaction' => ''
@@ -1481,7 +1484,7 @@ class ClangAPI extends SoapClient {
    * @param int $size
    * @return list(int $code, int[] $msg)
    */
-  public function mailingSet_getMailingIds(string $uuid, int $resourceId, int $offset, int $size): array {
+  public function mailingSet_getMailingIds(string $uuid, $resourceId, $offset, $size): array {
     return $this->__soapCall('mailingSet_getMailingIds', [$uuid, $resourceId, $offset, $size], [
         'uri' => 'https://login.myclang.com/app/api/soap/public/index.php?version=1.22',
         'soapaction' => ''
@@ -1512,7 +1515,7 @@ class ClangAPI extends SoapClient {
    * @param int $index
    * @return list(int $code, Customer $msg)
    */
-  public function customerSet_getCustomer(string $uuid, int $resourceId, int $index): array {
+  public function customerSet_getCustomer(string $uuid, $resourceId, $index): array {
     return $this->__soapCall('customerSet_getCustomer', [$uuid, $resourceId, $index], [
         'uri' => 'https://login.myclang.com/app/api/soap/public/index.php?version=1.22',
         'soapaction' => ''
@@ -1529,7 +1532,7 @@ class ClangAPI extends SoapClient {
    * @param int $size
    * @return list(int $code, Customer[] $msg)
    */
-  public function customerSet_getCustomers(string $uuid, int $resourceId, int $offset, int $size): array {
+  public function customerSet_getCustomers(string $uuid, $resourceId, $offset, $size): array {
     return $this->__soapCall('customerSet_getCustomers', [$uuid, $resourceId, $offset, $size], [
         'uri' => 'https://login.myclang.com/app/api/soap/public/index.php?version=1.22',
         'soapaction' => ''
@@ -1546,7 +1549,7 @@ class ClangAPI extends SoapClient {
    * @param int $size
    * @return list(int $code, int[] $msg)
    */
-  public function customerSet_getCustomerIds(string $uuid, int $resourceId, int $offset, int $size): array {
+  public function customerSet_getCustomerIds(string $uuid, $resourceId, $offset, $size): array {
     return $this->__soapCall('customerSet_getCustomerIds', [$uuid, $resourceId, $offset, $size], [
         'uri' => 'https://login.myclang.com/app/api/soap/public/index.php?version=1.22',
         'soapaction' => ''
@@ -1606,7 +1609,7 @@ class ClangAPI extends SoapClient {
    * @param int $index
    * @return list(int $code, Open $msg)
    */
-  public function openSet_getOpen(string $uuid, int $resourceId, int $index): array {
+  public function openSet_getOpen(string $uuid, $resourceId, $index): array {
     return $this->__soapCall('openSet_getOpen', [$uuid, $resourceId, $index], [
         'uri' => 'https://login.myclang.com/app/api/soap/public/index.php?version=1.22',
         'soapaction' => ''
@@ -1623,7 +1626,7 @@ class ClangAPI extends SoapClient {
    * @param int $size
    * @return list(int $code, Open[] $msg)
    */
-  public function openSet_getOpens(string $uuid, int $resourceId, int $offset, int $size): array {
+  public function openSet_getOpens(string $uuid, $resourceId, $offset, $size): array {
     return $this->__soapCall('openSet_getOpens', [$uuid, $resourceId, $offset, $size], [
         'uri' => 'https://login.myclang.com/app/api/soap/public/index.php?version=1.22',
         'soapaction' => ''
@@ -1640,7 +1643,7 @@ class ClangAPI extends SoapClient {
    * @param int $size
    * @return list(int $code, int[] $msg)
    */
-  public function openSet_getOpenIds(string $uuid, int $resourceId, int $offset, int $size): array {
+  public function openSet_getOpenIds(string $uuid, $resourceId, $offset, $size): array {
     return $this->__soapCall('openSet_getOpenIds', [$uuid, $resourceId, $offset, $size], [
         'uri' => 'https://login.myclang.com/app/api/soap/public/index.php?version=1.22',
         'soapaction' => ''
@@ -1700,7 +1703,7 @@ class ClangAPI extends SoapClient {
    * @param int $emailId
    * @return list(int $code, Email $msg)
    */
-  public function email_getById(string $uuid, int $emailId): array {
+  public function email_getById(string $uuid, $emailId): array {
     return $this->__soapCall('email_getById', [$uuid, $emailId], [
         'uri' => 'https://login.myclang.com/app/api/soap/public/index.php?version=1.22',
         'soapaction' => ''
@@ -1732,7 +1735,7 @@ class ClangAPI extends SoapClient {
    * @param Option[] $options
    * @return list(int $code, boolean $msg)
    */
-  public function email_sendToGroup(string $uuid, int $emailId, int $groupId, array $manualOptions, array $options): array {
+  public function email_sendToGroup(string $uuid, $emailId, $groupId, array $manualOptions, array $options): array {
     return $this->__soapCall('email_sendToGroup', [$uuid, $emailId, $groupId, $manualOptions, $options], [
         'uri' => 'https://login.myclang.com/app/api/soap/public/index.php?version=1.22',
         'soapaction' => ''
@@ -1750,7 +1753,7 @@ class ClangAPI extends SoapClient {
    * @param Option[] $options
    * @return list(int $code, boolean $msg)
    */
-  public function email_sendToProfile(string $uuid, int $emailId, int $profileId, array $manualOptions, array $options): array {
+  public function email_sendToProfile(string $uuid, $emailId, $profileId, array $manualOptions, array $options): array {
     return $this->__soapCall('email_sendToProfile', [$uuid, $emailId, $profileId, $manualOptions, $options], [
         'uri' => 'https://login.myclang.com/app/api/soap/public/index.php?version=1.22',
         'soapaction' => ''
@@ -1768,7 +1771,7 @@ class ClangAPI extends SoapClient {
    * @param Option[] $options
    * @return list(int $code, boolean $msg)
    */
-  public function email_sendToCustomer(string $uuid, int $emailId, int $customerId, array $manualOptions, array $options): array {
+  public function email_sendToCustomer(string $uuid, $emailId, $customerId, array $manualOptions, array $options): array {
     return $this->__soapCall('email_sendToCustomer', [$uuid, $emailId, $customerId, $manualOptions, $options], [
         'uri' => 'https://login.myclang.com/app/api/soap/public/index.php?version=1.22',
         'soapaction' => ''
@@ -1786,7 +1789,7 @@ class ClangAPI extends SoapClient {
    * @param Option[] $options
    * @return list(int $code, boolean $msg)
    */
-  public function email_sendToCustomers(string $uuid, int $emailId, array $customerIds, array $manualOptions, array $options): array {
+  public function email_sendToCustomers(string $uuid, $emailId, array $customerIds, array $manualOptions, array $options): array {
     return $this->__soapCall('email_sendToCustomers', [$uuid, $emailId, $customerIds, $manualOptions, $options], [
         'uri' => 'https://login.myclang.com/app/api/soap/public/index.php?version=1.22',
         'soapaction' => ''
@@ -1816,7 +1819,7 @@ class ClangAPI extends SoapClient {
    * @param int $emailId
    * @return list(int $code, boolean $msg)
    */
-  public function email_delete(string $uuid, int $emailId): array {
+  public function email_delete(string $uuid, $emailId): array {
     return $this->__soapCall('email_delete', [$uuid, $emailId], [
         'uri' => 'https://login.myclang.com/app/api/soap/public/index.php?version=1.22',
         'soapaction' => ''
@@ -1845,7 +1848,7 @@ class ClangAPI extends SoapClient {
    * @param int $broadcastId
    * @return list(int $code, boolean $msg)
    */
-  public function email_hasChanged(string $uuid, int $broadcastId): array {
+  public function email_hasChanged(string $uuid, $broadcastId): array {
     return $this->__soapCall('email_hasChanged', [$uuid, $broadcastId], [
         'uri' => 'https://login.myclang.com/app/api/soap/public/index.php?version=1.22',
         'soapaction' => ''
@@ -1875,7 +1878,7 @@ class ClangAPI extends SoapClient {
    * @param int $index
    * @return list(int $code, Complaint $msg)
    */
-  public function complaintSet_getComplaint(string $uuid, int $resourceId, int $index): array {
+  public function complaintSet_getComplaint(string $uuid, $resourceId, $index): array {
     return $this->__soapCall('complaintSet_getComplaint', [$uuid, $resourceId, $index], [
         'uri' => 'https://login.myclang.com/app/api/soap/public/index.php?version=1.22',
         'soapaction' => ''
@@ -1892,7 +1895,7 @@ class ClangAPI extends SoapClient {
    * @param int $size
    * @return list(int $code, Complaint[] $msg)
    */
-  public function complaintSet_getComplaints(string $uuid, int $resourceId, int $offset, int $size): array {
+  public function complaintSet_getComplaints(string $uuid, $resourceId, $offset, $size): array {
     return $this->__soapCall('complaintSet_getComplaints', [$uuid, $resourceId, $offset, $size], [
         'uri' => 'https://login.myclang.com/app/api/soap/public/index.php?version=1.22',
         'soapaction' => ''
@@ -1909,7 +1912,7 @@ class ClangAPI extends SoapClient {
    * @param int $size
    * @return list(int $code, int[] $msg)
    */
-  public function complaintSet_getComplaintIds(string $uuid, int $resourceId, int $offset, int $size): array {
+  public function complaintSet_getComplaintIds(string $uuid, $resourceId, $offset, $size): array {
     return $this->__soapCall('complaintSet_getComplaintIds', [$uuid, $resourceId, $offset, $size], [
         'uri' => 'https://login.myclang.com/app/api/soap/public/index.php?version=1.22',
         'soapaction' => ''
@@ -1926,7 +1929,7 @@ class ClangAPI extends SoapClient {
    * @param string $network
    * @return list(int $code, boolean $msg)
    */
-  public function account_addToCustomer(string $uuid, int $customerId, string $accountId, string $network): array {
+  public function account_addToCustomer(string $uuid, $customerId, $accountId, $network): array {
     return $this->__soapCall('account_addToCustomer', [$uuid, $customerId, $accountId, $network], [
         'uri' => 'https://login.myclang.com/app/api/soap/public/index.php?version=1.22',
         'soapaction' => ''
@@ -1943,7 +1946,7 @@ class ClangAPI extends SoapClient {
    * @param string $network
    * @return list(int $code, boolean $msg)
    */
-  public function account_deleteFromCustomer(string $uuid, string $customerId, int $accountId, string $network): array {
+  public function account_deleteFromCustomer(string $uuid, $customerId, $accountId, $network): array {
     return $this->__soapCall('account_deleteFromCustomer', [$uuid, $customerId, $accountId, $network], [
         'uri' => 'https://login.myclang.com/app/api/soap/public/index.php?version=1.22',
         'soapaction' => ''
@@ -1958,7 +1961,7 @@ class ClangAPI extends SoapClient {
    * @param int $bounceId
    * @return list(int $code, Bounce $msg)
    */
-  public function bounce_getById(string $uuid, int $bounceId): array {
+  public function bounce_getById(string $uuid, $bounceId): array {
     return $this->__soapCall('bounce_getById', [$uuid, $bounceId], [
         'uri' => 'https://login.myclang.com/app/api/soap/public/index.php?version=1.22',
         'soapaction' => ''
@@ -1971,10 +1974,10 @@ class ClangAPI extends SoapClient {
    *
    * @param string $uuid
    * @param MagentoProduct $product
-   * @param boolean $abandoned
+   * @param bool $abandoned
    * @return list(int $code, MagentoProduct $msg)
    */
-  public function magentoProduct_upsert(string $uuid, MagentoProduct $product, bool $abandoned): array {
+  public function magentoProduct_upsert(string $uuid, MagentoProduct $product, $abandoned): array {
     return $this->__soapCall('magentoProduct_upsert', [$uuid, $product, $abandoned], [
         'uri' => 'https://login.myclang.com/app/api/soap/public/index.php?version=1.22',
         'soapaction' => ''
@@ -2005,7 +2008,7 @@ class ClangAPI extends SoapClient {
    * @param string $websiteName
    * @return list(int $code, Customer[] $msg)
    */
-  public function magento_customerInsertBulkUnique(string $uuid, array $customers, int $websiteId, string $websiteName): array {
+  public function magento_customerInsertBulkUnique(string $uuid, array $customers, $websiteId, $websiteName): array {
     return $this->__soapCall('magento_customerInsertBulkUnique', [$uuid, $customers, $websiteId, $websiteName], [
         'uri' => 'https://login.myclang.com/app/api/soap/public/index.php?version=1.22',
         'soapaction' => ''
@@ -2021,7 +2024,7 @@ class ClangAPI extends SoapClient {
    * @param int $websiteId
    * @return list(int $code, Customer $msg)
    */
-  public function magento_customerInsertUnique(string $uuid, Customer $customer, int $websiteId): array {
+  public function magento_customerInsertUnique(string $uuid, Customer $customer, $websiteId): array {
     return $this->__soapCall('magento_customerInsertUnique', [$uuid, $customer, $websiteId], [
         'uri' => 'https://login.myclang.com/app/api/soap/public/index.php?version=1.22',
         'soapaction' => ''
@@ -2067,7 +2070,7 @@ class ClangAPI extends SoapClient {
    * @param string $password
    * @return list(int $code, boolean $msg)
    */
-  public function magento_testConnection(string $uuid, string $wsdl, string $username, string $password): array {
+  public function magento_testConnection(string $uuid, string $wsdl, $username, $password): array {
     return $this->__soapCall('magento_testConnection', [$uuid, $wsdl, $username, $password], [
         'uri' => 'https://login.myclang.com/app/api/soap/public/index.php?version=1.22',
         'soapaction' => ''
@@ -2097,7 +2100,7 @@ class ClangAPI extends SoapClient {
    * @param int $openId
    * @return list(int $code, Open $msg)
    */
-  public function open_getById(string $uuid, int $openId): array {
+  public function open_getById(string $uuid, $openId): array {
     return $this->__soapCall('open_getById', [$uuid, $openId], [
         'uri' => 'https://login.myclang.com/app/api/soap/public/index.php?version=1.22',
         'soapaction' => ''
