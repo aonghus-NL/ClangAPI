@@ -2,36 +2,36 @@
 namespace Clang;
 
 class MagentoCreditMemoItem {
-  public $storeId; // long
-  public $orderItemId; // long
-  public $externalProductId; // string
-  public $sku; // string
-  public $name; // string
-  public $price; // double
-  public $priceInclTax; // double
-  public $weeeTaxApplied; // string
-  public $weeeTaxAppliedAmount; // double
-  public $weeeTaxAppliedRowAmount; // double
-  public $weeeTaxDisposition; // string
-  public $weeeTaxRowDisposition; // string
-  public $quantity; // long
-  public $rowTotal; // double
-  public $rowTotalInclTax; // double
-  public $taxAmount; // double
-  public $hiddenTaxAmount; // double
-  public $backToStock; // long
-  public $createdAt; // string
-  public $updatedAt; // string
-  public $basePrice; // double
-  public $baseCost; // double
-  public $basePriceInclTax; // double
-  public $baseWeeeTaxAppliedAmount; // double
-  public $baseWeeeTaxAppliedRowAmount; // double
-  public $baseWeeeTaxAppliedRowAmnt; // double
-  public $baseWeeeTaxDisposition; // string
-  public $baseWeeeTaxRowDisposition; // string
-  public $baseRowTotal; // double
-  public $baseRowTotalInclTax; // double
-  public $baseTaxAmount; // double
-  public $baseHiddenTaxAmount; // double
+  public int $storeId; // long
+  public int $orderItemId; // long
+  public string $externalProductId; // string
+  public string $sku; // string
+  public string $name; // string
+  public float $price; // double
+  public float $priceInclTax; // double
+  public string $weeeTaxApplied; // string
+  public float $weeeTaxAppliedAmount; // double
+  public float $weeeTaxAppliedRowAmount; // double
+  public string $weeeTaxDisposition; // string
+  public string $weeeTaxRowDisposition; // string
+  public int $quantity; // long
+  public float $rowTotal; // double
+  public float $rowTotalInclTax; // double
+  public float $taxAmount; // double
+  public float $hiddenTaxAmount; // double
+  public int $backToStock; // long
+  public string $createdAt; // string
+  public string $updatedAt; // string
+  public float $basePrice; // double
+  public float $baseCost; // double
+  public float $basePriceInclTax; // double
+  public float $baseWeeeTaxAppliedAmount; // double
+  public float $baseWeeeTaxAppliedRowAmount; // double
+  public float $baseWeeeTaxAppliedRowAmnt; // double
+  public string $baseWeeeTaxDisposition; // string
+  public string $baseWeeeTaxRowDisposition; // string
+  public float $baseRowTotal; // double
+  public float $baseRowTotalInclTax; // double
+  public float $baseTaxAmount; // double
+  public float $baseHiddenTaxAmount; // double
 }

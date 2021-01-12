@@ -2,9 +2,9 @@
 namespace Clang;
 
 class Open {
-  public $id; // long
-  public $customerId; // long
-  public $mailingId; // long
-  public $openedAt; // string
-  public $browserInformation; // BrowserInformation
+  public int $id; // long
+  public int $customerId; // long
+  public int $mailingId; // long
+  public string $openedAt; // string
+  public BrowserInformation $browserInformation; // BrowserInformation
 }

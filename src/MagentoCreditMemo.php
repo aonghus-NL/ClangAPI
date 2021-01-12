@@ -2,49 +2,53 @@
 namespace Clang;
 
 class MagentoCreditMemo {
-  public $id; // long
-  public $externalOrderId; // string
-  public $customerId; // long
-  public $globalCurrencyCode; // string
-  public $storeCurrencyCode; // string
-  public $orderCurrencyCode; // string
-  public $storeToBaseRate; // double
-  public $storeToOrderRate; // double
-  public $discountDescription; // string
-  public $shippingTaxAmount; // double
-  public $totalQuantity; // long
-  public $adjustmentPositive; // string
-  public $adjustmentNegative; // string
-  public $subtotal; // double
-  public $subtotalInclTax; // double
-  public $grandTotal; // double
-  public $taxAmount; // double
-  public $discountAmount; // double
-  public $shippingAmount; // double
-  public $shippingInclTax; // double
-  public $adjustment; // string
-  public $hiddenTaxAmount; // double
-  public $offlineRequested; // string
-  public $doTransaction; // boolean
-  public $state; // string
-  public $incrementId; // long
-  public $createdAt; // string
-  public $updatedAt; // string
-  public $baseCurrencyCode; // string
-  public $baseToGlobalRate; // double
-  public $baseToOrderRate; // double
-  public $baseShippingTaxAmount; // double
-  public $baseShippingAmount; // double
-  public $baseAdjustmentPositive; // double
-  public $baseAdjustmentNegative; // double
-  public $baseSubtotal; // double
-  public $baseSubtotalInclTax; // double
-  public $baseGrandTotal; // double
-  public $baseTaxAmount; // double
-  public $baseDiscountAmount; // double
-  public $baseShippingInclTax; // double
-  public $baseCost; // double
-  public $baseAdjustment; // double
-  public $baseHiddenTaxAmount; // double
-  public $items; // ArrayOfMagentoCreditMemoItem
+  public int $id; // long
+  public string $externalOrderId; // string
+  public int $customerId; // long
+  public string $globalCurrencyCode; // string
+  public string $storeCurrencyCode; // string
+  public string $orderCurrencyCode; // string
+  public float $storeToBaseRate; // double
+  public float $storeToOrderRate; // double
+  public string $discountDescription; // string
+  public float $shippingTaxAmount; // double
+  public int $totalQuantity; // long
+  public string $adjustmentPositive; // string
+  public string $adjustmentNegative; // string
+  public float $subtotal; // double
+  public float $subtotalInclTax; // double
+  public float $grandTotal; // double
+  public float $taxAmount; // double
+  public float $discountAmount; // double
+  public float $shippingAmount; // double
+  public float $shippingInclTax; // double
+  public string $adjustment; // string
+  public float $hiddenTaxAmount; // double
+  public string $offlineRequested; // string
+  public bool $doTransaction; // boolean
+  public string $state; // string
+  public int $incrementId; // long
+  public string $createdAt; // string
+  public string $updatedAt; // string
+  public string $baseCurrencyCode; // string
+  public float $baseToGlobalRate; // double
+  public float $baseToOrderRate; // double
+  public float $baseShippingTaxAmount; // double
+  public float $baseShippingAmount; // double
+  public float $baseAdjustmentPositive; // double
+  public float $baseAdjustmentNegative; // double
+  public float $baseSubtotal; // double
+  public float $baseSubtotalInclTax; // double
+  public float $baseGrandTotal; // double
+  public float $baseTaxAmount; // double
+  public float $baseDiscountAmount; // double
+  public float $baseShippingInclTax; // double
+  public float $baseCost; // double
+  public float $baseAdjustment; // double
+  public float $baseHiddenTaxAmount; // double
+
+  /**
+   * @var MagentoCreditMemoItem[]
+   */
+  public array $items; // ArrayOfMagentoCreditMemoItem
 }

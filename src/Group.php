@@ -2,15 +2,15 @@
 namespace Clang;
 
 class Group {
-  public $id; // long
-  public $parentId; // long
-  public $name; // string
-  public $description; // string
-  public $createdBy; // string
-  public $createdAt; // string
-  public $modifiedBy; // string
-  public $modifiedAt; // string
-  public $countDate; // string
-  public $customerCountRecursive; // long
-  public $customerCount; // long
+  public int $id; // long
+  public int $parentId; // long
+  public string $name; // string
+  public string $description; // string
+  public string $createdBy; // string
+  public string $createdAt; // string
+  public string $modifiedBy; // string
+  public string $modifiedAt; // string
+  public string $countDate; // string
+  public int $customerCountRecursive; // long
+  public int $customerCount; // long
 }

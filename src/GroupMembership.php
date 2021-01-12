@@ -2,8 +2,8 @@
 namespace Clang;
 
 class GroupMembership {
-  public $groupId; // long
-  public $customerId; // long
-  public $isMember; // boolean
-  public $startedAt; // string
+  public int $groupId; // long
+  public int $customerId; // long
+  public bool $isMember; // boolean
+  public string $startedAt; // string
 }

@@ -2,8 +2,8 @@
 namespace Clang;
 
 class CustomerOption {
-  public $identifier; // string
-  public $customerId; // long
-  public $name; // string
-  public $value; // string
+  public string $identifier; // string
+  public int $customerId; // long
+  public string $name; // string
+  public string $value; // string
 }

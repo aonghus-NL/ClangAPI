@@ -2,10 +2,10 @@
 namespace Clang;
 
 class Bounce {
-  public $id; // long
-  public $customerId; // long
-  public $mailingId; // long
-  public $bouncedAt; // string
-  public $rule; // string
-  public $category; // string
+  public int $id; // long
+  public int $customerId; // long
+  public int $mailingId; // long
+  public string $bouncedAt; // string
+  public string $rule; // string
+  public string $category; // string
 }

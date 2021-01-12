@@ -2,21 +2,26 @@
 namespace Clang;
 
 class MailingLink {
-  public $mailingId; // long
-  public $id; // long
-  public $url; // string
-  public $description; // string
-  public $track; // boolean
-  public $source; // boolean
-  public $tags; // ArrayOfTag
-  public $google_source; // string
-  public $google_medium; // string
-  public $google_term; // string
-  public $google_content; // string
-  public $google_campaign; // string
-  public $sitestat_campaign; // string
-  public $sitestat_source; // string
-  public $sitestat_mchannel; // string
-  public $sitestat_linkname; // string
-  public $sitestat_fee; // string
+  public int $mailingId; // long
+  public int $id; // long
+  public string $url; // string
+  public string $description; // string
+  public bool $track; // boolean
+  public bool $source; // boolean
+
+  /**
+   * @var Tag[]
+   */
+  public array $tags; // ArrayOfTag
+
+  public string $google_source; // string
+  public string $google_medium; // string
+  public string $google_term; // string
+  public string $google_content; // string
+  public string $google_campaign; // string
+  public string $sitestat_campaign; // string
+  public string $sitestat_source; // string
+  public string $sitestat_mchannel; // string
+  public string $sitestat_linkname; // string
+  public string $sitestat_fee; // string
 }

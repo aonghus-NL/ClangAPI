@@ -2,60 +2,65 @@
 namespace Clang;
 
 class MagentoOrder {
-  public $quoteId; // string
-  public $subtotalInclTax; // double
-  public $couponCode; // string
-  public $totalQtyOrdered; // long
-  public $weight; // double
-  public $taxString; // string
-  public $shippingInclTax; // double
-  public $discountDescription; // string
-  public $shippingDiscountAmount; // double
-  public $totalItemCount; // long
-  public $status; // string
-  public $externalOrderId; // string
-  public $note; // string
-  public $id; // long
-  public $storeview; // string
-  public $customerId; // long
-  public $subtotal; // double
-  public $total; // double
-  public $taxAmount; // double
-  public $shippingCost; // double
-  public $discount; // double
-  public $currency; // string
-  public $rewardPoints; // long
-  public $billingFirstname; // string
-  public $billingMiddlename; // string
-  public $billingTitle; // string
-  public $billingLastname; // string
-  public $billingAddress; // string
-  public $billingZipCode; // string
-  public $billingPoBox; // long
-  public $billingCity; // string
-  public $billingState; // string
-  public $billingCountry; // string
-  public $billingCompanyName; // string
-  public $billingPhone; // string
-  public $billingEmailAddress; // string
-  public $shippingFirstname; // string
-  public $shippingMiddlename; // string
-  public $shippingTitle; // string
-  public $shippingLastname; // string
-  public $shippingAddress; // string
-  public $shippingZipCode; // string
-  public $shippingPoBox; // long
-  public $shippingCity; // string
-  public $shippingState; // string
-  public $shippingCountry; // string
-  public $shippingCompanyName; // string
-  public $shippingPhone; // string
-  public $paymentMethod; // string
-  public $shippingMethod; // string
-  public $orderDate; // long
-  public $products; // ArrayOfMagentoProduct
-  public $billingPrefix; // string
-  public $billingSuffix; // string
-  public $shippingPrefix; // string
-  public $shippingSuffix; // string
+  public string $quoteId; // string
+  public float $subtotalInclTax; // double
+  public string $couponCode; // string
+  public int $totalQtyOrdered; // long
+  public float $weight; // double
+  public string $taxString; // string
+  public float $shippingInclTax; // double
+  public string $discountDescription; // string
+  public float $shippingDiscountAmount; // double
+  public int $totalItemCount; // long
+  public string $status; // string
+  public string $externalOrderId; // string
+  public string $note; // string
+  public int $id; // long
+  public string $storeview; // string
+  public int $customerId; // long
+  public float $subtotal; // double
+  public float $total; // double
+  public float $taxAmount; // double
+  public float $shippingCost; // double
+  public float $discount; // double
+  public string $currency; // string
+  public int $rewardPoints; // long
+  public string $billingFirstname; // string
+  public string $billingMiddlename; // string
+  public string $billingTitle; // string
+  public string $billingLastname; // string
+  public string $billingAddress; // string
+  public string $billingZipCode; // string
+  public int $billingPoBox; // long
+  public string $billingCity; // string
+  public string $billingState; // string
+  public string $billingCountry; // string
+  public string $billingCompanyName; // string
+  public string $billingPhone; // string
+  public string $billingEmailAddress; // string
+  public string $shippingFirstname; // string
+  public string $shippingMiddlename; // string
+  public string $shippingTitle; // string
+  public string $shippingLastname; // string
+  public string $shippingAddress; // string
+  public string $shippingZipCode; // string
+  public int $shippingPoBox; // long
+  public string $shippingCity; // string
+  public string $shippingState; // string
+  public string $shippingCountry; // string
+  public string $shippingCompanyName; // string
+  public string $shippingPhone; // string
+  public string $paymentMethod; // string
+  public string $shippingMethod; // string
+  public int $orderDate; // long
+
+  /**
+   * @var MagentoProduct[]
+   */
+  public array $products; // ArrayOfMagentoProduct
+
+  public string $billingPrefix; // string
+  public string $billingSuffix; // string
+  public string $shippingPrefix; // string
+  public string $shippingSuffix; // string
 }
