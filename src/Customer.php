@@ -5,7 +5,7 @@ class Customer {
   /**
    * @var Account[]
    */
-  public array $accounts; // ArrayOfAccount
+  public ?array $accounts; // ArrayOfAccount
 
   public string $smsOptIn; // string
   public string $optIn; // string
