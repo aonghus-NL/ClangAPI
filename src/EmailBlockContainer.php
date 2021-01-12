@@ -2,9 +2,30 @@
 namespace Clang;
 
 class EmailBlockContainer {
-  public $id; // long
-  public $name; // string
-  public $type; // string
-  public $defaultBlockId; // long
-  public $blocks; // ArrayOfEmailBlock
+
+  /**
+   * @var int
+   */
+  public $id;
+
+  /**
+   * @var string
+   */
+  public $name;
+
+  /**
+   * @var string
+   */
+  public string $type;
+
+  /**
+   * @var int
+   */
+  public $defaultBlockId;
+
+  /**
+   * @var EmailBlock[]
+   */
+  public $blocks;
+
 }

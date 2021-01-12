@@ -2,7 +2,20 @@
 namespace Clang;
 
 class Option {
-  public $type; // string
-  public $name; // string
-  public $value; // string
+
+  /**
+   * @var string
+   */
+  public $type;
+
+  /**
+   * @var string
+   */
+  public $name;
+
+  /**
+   * @var string
+   */
+  public $value;
+
 }

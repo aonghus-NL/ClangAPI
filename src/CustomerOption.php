@@ -2,8 +2,24 @@
 namespace Clang;
 
 class CustomerOption {
-  public $identifier; // string
-  public $customerId; // long
-  public $name; // string
-  public $value; // string
+
+  /**
+   * @var string
+   */
+  public $identifier;
+
+  /**
+   * @var int
+   */
+  public int $customerId;
+
+  /**
+   * @var string
+   */
+  public $name;
+
+  /**
+   * @var string
+   */
+  public $value;
 }

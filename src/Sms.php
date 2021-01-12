@@ -2,16 +2,65 @@
 namespace Clang;
 
 class Sms {
-  public $id; // long
-  public $campaignId; // long
-  public $name; // string
-  public $fromName; // string
-  public $plainText; // string
-  public $enableUnicodeSupport; // boolean
-  public $maxSmsMessages; // long
-  public $createdBy; // string
-  public $createdAt; // string
-  public $modifiedBy; // string
-  public $modifiedAt; // string
-  public $textBlocks; // ArrayOfSmsBlockContainer
+
+  /**
+   * @var int
+   */
+  public $id;
+
+  /**
+   * @var int
+   */
+  public $campaignId;
+
+  /**
+   * @var string
+   */
+  public $name;
+
+  /**
+   * @var string
+   */
+  public $fromName;
+
+  /**
+   * @var string
+   */
+  public $plainText;
+
+  /**
+   * @var bool
+   */
+  public $enableUnicodeSupport;
+
+  /**
+   * @var int
+   */
+  public $maxSmsMessages;
+
+  /**
+   * @var string
+   */
+  public $createdBy;
+
+  /**
+   * @var string
+   */
+  public $createdAt;
+
+  /**
+   * @var string
+   */
+  public $modifiedBy;
+
+  /**
+   * @var string
+   */
+  public $modifiedAt;
+
+  /**
+   * @var SmsBlockContainer[]
+   */
+  public $textBlocks;
+
 }

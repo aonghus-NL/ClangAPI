@@ -2,23 +2,100 @@
 namespace Clang;
 
 class MagentoEmail {
-  public $folder; // string
-  public $class; // string
-  public $id; // long
-  public $type; // string
-  public $templateId; // long
-  public $name; // string
-  public $campaignId; // long
-  public $fromAddress; // string
-  public $fromName; // string
-  public $replyToAddress; // string
-  public $replyToName; // string
-  public $subject; // string
-  public $createdBy; // string
-  public $createdAt; // string
-  public $modifiedBy; // string
-  public $modifiedAt; // string
-  public $htmlContent; // string
-  public $htmlBlocks; // ArrayOfEmailBlockContainer
-  public $textContent; // string
+
+  /**
+   * @var string
+   */
+  public $folder;
+
+  /**
+   * @var string
+   */
+  public $class;
+
+  /**
+   * @var int
+   */
+  public $id;
+
+  /**
+   * @var string
+   */
+  public $type;
+
+  /**
+   * @var int
+   */
+  public $templateId;
+
+  /**
+   * @var string
+   */
+  public $name;
+
+  /**
+   * @var int
+   */
+  public $campaignId;
+
+  /**
+   * @var string
+   */
+  public $fromAddress;
+
+  /**
+   * @var string
+   */
+  public $fromName;
+
+  /**
+   * @var string
+   */
+  public $replyToAddress;
+
+  /**
+   * @var string
+   */
+  public $replyToName;
+
+  /**
+   * @var string
+   */
+  public $subject;
+
+  /**
+   * @var string
+   */
+  public $createdBy;
+
+  /**
+   * @var string
+   */
+  public $createdAt;
+
+  /**
+   * @var string
+   */
+  public $modifiedBy;
+
+  /**
+   * @var string
+   */
+  public $modifiedAt;
+
+  /**
+   * @var string
+   */
+  public $htmlContent;
+
+  /**
+   * @var EmailBlockContainer[]
+   */
+  public $htmlBlocks;
+
+  /**
+   * @var string
+   */
+  public $textContent;
+
 }

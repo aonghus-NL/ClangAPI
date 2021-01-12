@@ -2,26 +2,115 @@
 namespace Clang;
 
 class Mailing {
-  public $plannedFor; // string
-  public $uniqueClicks; // long
-  public $uniqueOpens; // long
-  public $received; // long
-  public $campaignId; // long
-  public $campaignName; // string
-  public $id; // long
-  public $contentName; // string
-  public $sourceType; // string
-  public $sourceName; // string
-  public $customers; // long
-  public $throttle; // long
-  public $status; // string
-  public $links; // ArrayOfMailingLink
-  public $type; // string
-  public $description; // string
-  public $startedAt; // string
-  public $endedAt; // string
-  public $bounces; // long
-  public $opens; // long
-  public $clicks; // long
-  public $complaints; // long
+
+  /**
+   * @var string
+   */
+  public $plannedFor;
+
+  /**
+   * @var int
+   */
+  public $uniqueClicks;
+
+  /**
+   * @var int
+   */
+  public $uniqueOpens;
+
+  /**
+   * @var int
+   */
+  public $received;
+
+  /**
+   * @var int
+   */
+  public $campaignId;
+
+  /**
+   * @var string
+   */
+  public $campaignName;
+
+  /**
+   * @var int
+   */
+  public $id;
+
+  /**
+   * @var string
+   */
+  public $contentName;
+
+  /**
+   * @var string
+   */
+  public $sourceType;
+
+  /**
+   * @var string
+   */
+  public $sourceName;
+
+  /**
+   * @var int
+   */
+  public $customers;
+
+  /**
+   * @var int
+   */
+  public $throttle;
+
+  /**
+   * @var string
+   */
+  public $status;
+
+  /**
+   * @var MailingLink[]
+   */
+  public $links;
+
+  /**
+   * @var string
+   */
+  public $type;
+
+  /**
+   * @var string
+   */
+  public $description;
+
+  /**
+   * @var string
+   */
+  public $startedAt;
+
+  /**
+   * @var string
+   */
+  public $endedAt;
+
+  /**
+   * @var int
+   */
+  public $bounces;
+
+  /**
+   * @var int
+   */
+  public $opens;
+
+  /**
+   * @var int
+   */
+  public $clicks;
+
+  /**
+   * @var int
+   */
+  public $complaints;
+
 }

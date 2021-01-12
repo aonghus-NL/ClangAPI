@@ -2,8 +2,23 @@
 namespace Clang;
 
 class ClangResource {
+  /**
+   * @var int
+   */
   public $id; // long
-  public $type; // string
-  public $status; // string
+
+  /**
+   * @var string
+   */
+   public string $type;
+
+  /**
+   * @var string
+   */
+   public string $status;
+
+  /**
+   * @var int
+   */
   public $size; // long
 }

@@ -2,13 +2,49 @@
 namespace Clang;
 
 class BrowserInformation {
-  public $name; // string
-  public $version; // string
-  public $platform; // string
-  public $country; // string
-  public $httpAcceptCharset; // string
-  public $httpAcceptLanguage; // string
-  public $httpAcceptEncoding; // string
-  public $httpAccept; // string
-  public $httpUserAgent; // string
+
+  /**
+   * @var string
+   */
+  public string $name;
+
+  /**
+   * @var string
+   */
+  public string $version;
+
+  /**
+   * @var string
+   */
+  public string $platform;
+
+  /**
+   * @var string
+   */
+  public string $country;
+
+  /**
+   * @var string
+   */
+  public string $httpAcceptCharset;
+
+  /**
+   * @var string
+   */
+  public string $httpAcceptLanguage;
+
+  /**
+   * @var string
+   */
+  public string $httpAcceptEncoding;
+
+  /**
+   * @var string
+   */
+  public string $httpAccept;
+
+  /**
+   * @var string
+   */
+  public string $httpUserAgent;
 }

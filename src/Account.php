@@ -2,6 +2,13 @@
 namespace Clang;
 
 class Account {
-  public $network; // string
-  public $accountId; // string
+  /**
+   * @var string
+   */
+  public $network;
+
+  /**
+   * @var string
+   */
+  public $accountId;
 }

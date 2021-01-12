@@ -2,7 +2,20 @@
 namespace Clang;
 
 class MagentoCategory {
-  public $id; // long
-  public $externalCategoryId; // long
-  public $name; // string
+
+  /**
+   * @var int
+   */
+  public $id;
+
+  /**
+   * @var int
+   */
+  public $externalCategoryId;
+
+  /**
+   * @var string
+   */
+  public $name;
+
 }

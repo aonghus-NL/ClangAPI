@@ -2,8 +2,21 @@
 namespace Clang;
 
 class CampaignObjectStatisticsOption {
-    public $id; // string
-    public $name; // string
-    public $value; // string
-    public $hasCustomerSet; // boolean
+    /**
+     * @var string
+     */
+    public $id;
+    /**
+     * @var string
+     */
+    public $name;
+    /**
+     * @var string
+     */
+    public $value;
+
+    /**
+     * @var bool
+     */
+    public $hasCustomerSet;
 }

@@ -2,21 +2,90 @@
 namespace Clang;
 
 class MailingLink {
-  public $mailingId; // long
-  public $id; // long
-  public $url; // string
-  public $description; // string
-  public $track; // boolean
-  public $source; // boolean
-  public $tags; // ArrayOfTag
-  public $google_source; // string
-  public $google_medium; // string
-  public $google_term; // string
-  public $google_content; // string
-  public $google_campaign; // string
-  public $sitestat_campaign; // string
-  public $sitestat_source; // string
-  public $sitestat_mchannel; // string
-  public $sitestat_linkname; // string
-  public $sitestat_fee; // string
+
+  /**
+   * @var int
+   */
+  public $mailingId;
+
+  /**
+   * @var int
+   */
+  public $id;
+
+  /**
+   * @var string
+   */
+  public $url;
+
+  /**
+   * @var string
+   */
+  public $description;
+
+  /**
+   * @var bool
+   */
+  public $track;
+
+  /**
+   * @var bool
+   */
+  public $source;
+
+  /**
+   * @var Tag[]
+   */
+  public $tags;
+
+  /**
+   * @var string
+   */
+  public $google_source;
+
+  /**
+   * @var string
+   */
+  public $google_medium;
+
+  /**
+   * @var string
+   */
+  public $google_term;
+
+  /**
+   * @var string
+   */
+  public $google_content;
+
+  /**
+   * @var string
+   */
+  public $google_campaign;
+
+  /**
+   * @var string
+   */
+  public $sitestat_campaign;
+
+  /**
+   * @var string
+   */
+  public $sitestat_source;
+
+  /**
+   * @var string
+   */
+  public $sitestat_mchannel;
+
+  /**
+   * @var string
+   */
+  public $sitestat_linkname;
+
+  /**
+   * @var string
+   */
+  public $sitestat_fee;
+
 }

@@ -2,7 +2,20 @@
 namespace Clang;
 
 class SmsBlock {
+
+  /**
+   * @var int
+   */
   public $id; // long
-  public $name; // string
-  public $content; // string
+
+  /**
+   * @var string
+   */
+  public $name;
+
+  /**
+   * @var string
+   */
+  public $content;
+
 }

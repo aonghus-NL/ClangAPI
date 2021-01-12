@@ -2,7 +2,18 @@
 namespace Clang;
 
 class EmailBlock {
-  public $id; // long
-  public $name; // string
-  public $content; // string
+
+  /**
+   * @var int
+   */
+  public $id;
+  /**
+   * @var string
+   */
+  public $name;
+
+  /**
+   * @var string
+   */
+  public $content;
 }

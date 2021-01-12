@@ -2,9 +2,29 @@
 namespace Clang;
 
 class Complaint {
-  public $feedbackloop; // string
-  public $id; // long
-  public $customerId; // long
-  public $mailingId; // long
-  public $complaintAt; // string
+
+  /**
+   * @var string
+   */
+  public $feedbackloop;
+
+  /**
+   * @var int
+   */
+  public $id;
+
+  /**
+   * @var int
+   */
+  public $customerId;
+
+  /**
+   * @var int
+   */
+  public $mailingId;
+
+  /**
+   * @var string
+   */
+  public $complaintAt;
 }

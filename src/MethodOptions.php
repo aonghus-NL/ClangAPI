@@ -2,6 +2,15 @@
 namespace Clang;
 
 class MethodOptions {
-  public $method; // string
-  public $options; // ArrayOfOption
+
+  /**
+   * @var string
+   */
+  public $method;
+
+  /**
+   * @var Option[]
+   */
+  public $options;
+
 }

@@ -2,36 +2,165 @@
 namespace Clang;
 
 class MagentoCreditMemoItem {
-  public $storeId; // long
-  public $orderItemId; // long
-  public $externalProductId; // string
-  public $sku; // string
-  public $name; // string
-  public $price; // double
-  public $priceInclTax; // double
-  public $weeeTaxApplied; // string
-  public $weeeTaxAppliedAmount; // double
-  public $weeeTaxAppliedRowAmount; // double
-  public $weeeTaxDisposition; // string
-  public $weeeTaxRowDisposition; // string
-  public $quantity; // long
-  public $rowTotal; // double
-  public $rowTotalInclTax; // double
-  public $taxAmount; // double
-  public $hiddenTaxAmount; // double
-  public $backToStock; // long
-  public $createdAt; // string
-  public $updatedAt; // string
-  public $basePrice; // double
-  public $baseCost; // double
-  public $basePriceInclTax; // double
-  public $baseWeeeTaxAppliedAmount; // double
-  public $baseWeeeTaxAppliedRowAmount; // double
-  public $baseWeeeTaxAppliedRowAmnt; // double
-  public $baseWeeeTaxDisposition; // string
-  public $baseWeeeTaxRowDisposition; // string
-  public $baseRowTotal; // double
-  public $baseRowTotalInclTax; // double
-  public $baseTaxAmount; // double
-  public $baseHiddenTaxAmount; // double
+
+  /**
+   * @var int
+   */
+  public $storeId;
+
+  /**
+   * @var int
+   */
+  public $orderItemId;
+
+  /**
+   * @var string
+   */
+  public $externalProductId;
+
+  /**
+   * @var string
+   */
+  public $sku;
+
+  /**
+   * @var string
+   */
+  public $name;
+
+  /**
+   * @var float
+   */
+  public $price;
+
+  /**
+   * @var float
+   */
+  public $priceInclTax;
+
+  /**
+   * @var string
+   */
+  public $weeeTaxApplied;
+
+  /**
+   * @var float
+   */
+  public $weeeTaxAppliedAmount;
+
+  /**
+   * @var float
+   */
+  public $weeeTaxAppliedRowAmount;
+
+  /**
+   * @var string
+   */
+  public $weeeTaxDisposition;
+
+  /**
+   * @var string
+   */
+  public $weeeTaxRowDisposition;
+
+  /**
+   * @var int
+   */
+  public $quantity;
+
+  /**
+   * @var float
+   */
+  public $rowTotal;
+
+  /**
+   * @var float
+   */
+  public $rowTotalInclTax;
+
+  /**
+   * @var float
+   */
+  public $taxAmount;
+
+  /**
+   * @var float
+   */
+  public $hiddenTaxAmount;
+
+  /**
+   * @var int
+   */
+  public $backToStock;
+
+  /**
+   * @var string
+   */
+  public $createdAt;
+
+  /**
+   * @var string
+   */
+  public $updatedAt;
+
+  /**
+   * @var float
+   */
+  public $basePrice;
+
+  /**
+   * @var float
+   */
+  public $baseCost;
+
+  /**
+   * @var float
+   */
+  public $basePriceInclTax;
+
+  /**
+   * @var float
+   */
+  public $baseWeeeTaxAppliedAmount;
+
+  /**
+   * @var float
+   */
+  public $baseWeeeTaxAppliedRowAmount;
+
+  /**
+   * @var float
+   */
+  public $baseWeeeTaxAppliedRowAmnt;
+
+  /**
+   * @var string
+   */
+  public $baseWeeeTaxDisposition;
+
+  /**
+   * @var string
+   */
+  public $baseWeeeTaxRowDisposition;
+
+  /**
+   * @var float
+   */
+  public $baseRowTotal;
+
+  /**
+   * @var float
+   */
+  public $baseRowTotalInclTax;
+
+  /**
+   * @var float
+   */
+  public $baseTaxAmount;
+
+  /**
+   * @var float
+   */
+  public $baseHiddenTaxAmount;
+
 }
