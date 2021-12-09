@@ -19,7 +19,7 @@ class CustomerOption {
   public $name;
 
   /**
-   * @var string
+   * @var string|null
    */
   public $value;
 }
